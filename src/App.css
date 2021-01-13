@@ -1,42 +1,147 @@
-.App {
+body {
+  margin: 0px;
+  padding: 0px;
+  /* background-color: rgb(250, 216, 245); */
+}
+.home {
+  /* border: 2px solid red; */
+  height: 90vh;
+  padding: 0px;
+}
+.main {
+  /* border: 2px solid green; */
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main p {
+  color: #000000;
+  margin: 1rem;
+  margin-top: 2rem;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: capitalize;
+  /* letter-spacing: -0.1rem; */
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: bolder;
 }
-
-.App-logo {
-  text-align: center;
+.main button{
+  border: 2px solid #363636;
+  background:none;
+  border-radius:8px;
+  padding: 0.5rem 2rem;
+  margin:10px 2.5rem;
+  font-size: 1.3rem;
+  color: #363636;
+  font-family:sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 250ms;
+  font-weight:bolder;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main button::before{
+  content: "";
+  position:absolute;
+  left:0%;
+  top: 0%;
+  width: 0%;
+  height: 100%;
+  background:#363636;
+  /* top: 0px; */
+  /* opacity: 0%; */
+  z-index: -1;
+  transition: 250ms;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main button:hover::before{
+  /*border-radius: 0 0 50% 50%;*/ 
+  width:100%
+}
+.main button:hover{
+  /* transform:rotateZ(360deg); */
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.icons {
+  /* margin-top: 5rem; */
+  display: flex;
+  /* border:2px solid blue; */
+  justify-content: space-around;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left {
+  /* border:2px solid blue; */
+  width: 45%;
+  height: 23rem;
+  background-color: #f5c3ff;
+  border-radius: 20px;
+  position: relative;
 }
+.right {
+  /* border:2px solid blue; */
+  width: 45%;
+  height: 23rem;
+  background-color: #d3fadf;
+  border-radius: 20px;
+  position: relative;
+}
+img {
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(116, 116, 116);
+}
+.ouch1 {
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  z-index: 2;
+  /* transition:1 */
+  cursor: pointer;
+}
+.ouch2 {
+  width: 10rem;
+  height: auto;
+  position: absolute;
+  left: 60%;
+  top: 10%;
+  z-index: 1;
+  /* transition:1 */
+  cursor: pointer;
+}
+.ouch3 {
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  left: 40%;
+  top: 65%;
+  z-index: 1;
+  /* transition:1 */
+  cursor: pointer;
+}
+.ouch6 {
+  width: 10rem;
+  height: auto;
+  position: absolute;
+  left: 4%;
+  top: 10%;
+  z-index: 3;
+  /* transition:1 */
+  cursor: pointer;
+}
+.ouch2:hover,
+.ouch3:hover,
+.ouch6:hover {
+  z-index: 3;
+}
+.ouch1:hover {
+  z-index: 4;
+}
+.vector {
+  width: 30rem;
+  height: auto;
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  z-index: 1;
+}
+/* div{
+  border:2px solid red;
+} */
