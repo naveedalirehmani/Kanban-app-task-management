@@ -12,10 +12,13 @@ body {
   /* border: 2px solid green; */
   text-align: center;
 }
+.buttonsAlign{
+ padding-left:70%;
+}
 .main p {
   color: #000000;
   margin: 1rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   font-size: 40px;
   line-height: 48px;
   text-transform: capitalize;
@@ -23,12 +26,12 @@ body {
   font-family: "Yusei Magic", sans-serif;
   font-weight: bolder;
 }
-.main button{
+.loginButton,.signupButton{
   border: 2px solid #363636;
   background:none;
   border-radius:8px;
   padding: 0.5rem 2rem;
-  margin:10px 2.5rem;
+  margin:10px 0.5rem;
   font-size: 1.3rem;
   color: #363636;
   font-family:sans-serif;
@@ -38,7 +41,7 @@ body {
   transition: 250ms;
   font-weight:bolder;
 }
-.main button::before{
+.loginButton::before,.signupButton::before{
   content: "";
   position:absolute;
   left:0%;
@@ -51,18 +54,17 @@ body {
   z-index: -1;
   transition: 250ms;
 }
-.main button:hover::before{
+.loginButton:hover::before,.signupButton:hover::before{
   /*border-radius: 0 0 50% 50%;*/ 
   width:100%
 }
-.main button:hover{
+.loginButton:hover,.signupButton:hover{
   /* transform:rotateZ(360deg); */
   color: white;
 }
 .icons {
   /* margin-top: 5rem; */
   display: flex;
-  /* border:2px solid blue; */
   justify-content: space-around;
 }
 .left {
@@ -142,6 +144,3 @@ img {
   top: 15%;
   z-index: 1;
 }
-/* div{
-  border:2px solid red;
-} */

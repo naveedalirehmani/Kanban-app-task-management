@@ -1,17 +1,20 @@
 import './App.css';
-import Ouch1 from "./images/ouch1.png"
-import Ouch2 from "./images/ouch2.png"
-import Ouch3 from "./images/ouch3.png"
-import Ouch6 from "./images/ouch6.png"
-import vector from "./images/vectorCreator2.jpg"
+import React from 'react';
+import Ouch1 from "./images/ouch1.png";
+import Ouch2 from "./images/ouch2.png";
+import Ouch3 from "./images/ouch3.png";
+import Ouch6 from "./images/ouch6.png";
+import vector from "./images/vectorCreator2.jpg";
 
 function App() {
   return (
     <section className="home">
         <div className="main">
-          <p>We Are TodoMatic <br/>Bring your team together, Choose a better way to work</p>
-          <button className="loginButton">Sign In</button>
+          <div className="buttonsAlign">
+          <button className="loginButton">Log In</button>
           <button className="signupButton">Sign Up</button>
+          </div>
+          <p>We Are TodoMatic <br/>Bring your team together, Choose a better way to work</p>
           <div className="icons">
           <div className="left">
             <img className="ouch1" src={Ouch1} alt=""/>
