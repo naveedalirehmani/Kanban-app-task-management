@@ -1,0 +1,36 @@
+.emailInput,.passwordInput{
+    background:none;
+    border:none;
+    border-bottom:4px solid rgb(66, 66, 66);
+    font-size:1.2rem;
+    margin:0.5rem;
+    color:black;
+    outline:none;
+    font-family: "Yusei Magic", sans-serif;
+}
+.logInSvg{
+    margin:2rem 0rem 1rem 0rem;
+    width:20rem;
+    height:auto;
+    box-shadow: none;
+}
+.continueButton{
+    border: 2px solid #363636;
+    background-color:#363636;
+    border-radius:8px;
+    padding: 0.5rem 2rem;
+    margin:10px 0.5rem;
+    font-size: 1rem;
+    color: white;
+    font-family:sans-serif;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 250ms;
+    font-family: "Yusei Magic", sans-serif;
+    /* outline:none; */
+  }
+  .continueButton:hover{
+    color:#363636;
+    background:none;
+  }

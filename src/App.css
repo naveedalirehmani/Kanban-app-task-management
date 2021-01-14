@@ -1,7 +1,10 @@
 body {
   margin: 0px;
   padding: 0px;
-  /* background-color: rgb(250, 216, 245); */
+  background:linear-gradient(90deg,#ecfff2,#f9e1ff) 
+}
+::selection{
+  background-color:rgb(255, 221, 72);
 }
 .home {
   /* border: 2px solid red; */
@@ -39,7 +42,9 @@ body {
   position: relative;
   overflow: hidden;
   transition: 250ms;
-  font-weight:bolder;
+  /* font-weight:bolder; */
+  font-family: "Yusei Magic", sans-serif;
+  outline:none;
 }
 .loginButton::before,.signupButton::before{
   content: "";
@@ -67,26 +72,26 @@ body {
   display: flex;
   justify-content: space-around;
 }
-.left {
+.left,.right {
+  display:flex;
+  flex-direction: column;
   /* border:2px solid blue; */
   width: 45%;
   height: 23rem;
   background-color: #f5c3ff;
   border-radius: 20px;
   position: relative;
+  box-shadow: 5px 5px 10px rgb(116, 116, 116);
+  align-items:center;
 }
 .right {
-  /* border:2px solid blue; */
-  width: 45%;
-  height: 23rem;
   background-color: #d3fadf;
-  border-radius: 20px;
-  position: relative;
 }
 img {
   /* border: 1px solid black; */
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgb(116, 116, 116);
+  transition:250ms;
 }
 .ouch1 {
   width: 20rem;
@@ -126,15 +131,18 @@ img {
   top: 10%;
   z-index: 3;
   /* transition:1 */
-  cursor: pointer;
 }
 .ouch2:hover,
 .ouch3:hover,
 .ouch6:hover {
   z-index: 3;
+  cursor: pointer;
+  transform:scale(1.1)
 }
-.ouch1:hover {
+.ouch1:hover,.vector:hover{
   z-index: 4;
+  cursor: pointer;
+  transform:scale(1.1)
 }
 .vector {
   width: 30rem;
