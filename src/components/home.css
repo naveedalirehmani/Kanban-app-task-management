@@ -102,7 +102,7 @@ body {
   img {
     /* border: 1px solid black; */
     border-radius: 20px;
-    box-shadow: 2px 2px 5px rgb(116, 116, 116);
+    box-shadow: 1px 1px 3px rgb(116, 116, 116);
     transition:250ms;
   }
   .ouch1 {

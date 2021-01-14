@@ -9,7 +9,7 @@ function logInForm(props){
            <div>
            <img className="signUpSvg"src={signUpSvg} alt=""/>     
            </div>
-           <div>
+           <div className="borderDiv">
            <input className="signUpName" placeholder="Name" type="text"/>
            <input className="signUpAge" placeholder="Age" type="number"/>
            <input className="signUpEmailInput" placeholder="Email" type="text"/>
