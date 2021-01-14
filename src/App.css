@@ -4,7 +4,7 @@ body {
   background:linear-gradient(90deg,#ecfff2,#f9e1ff) 
 }
 ::selection{
-  background-color:rgb(255, 221, 72);
+  background-color:#6666667a;
 }
 .home {
   /* border: 2px solid red; */
@@ -86,6 +86,7 @@ body {
 }
 .right {
   background-color: #d3fadf;
+  flex-direction:row;
 }
 img {
   /* border: 1px solid black; */
@@ -151,4 +152,8 @@ img {
   left: 10%;
   top: 15%;
   z-index: 1;
+}
+div{
+  /* border:1px solid red; */
+
 }

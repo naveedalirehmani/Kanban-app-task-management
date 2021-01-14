@@ -7,8 +7,8 @@ function logInForm(props){
     return(
        <Aux>
            <img className="logInSvg"src={logInSvg} alt=""/>
-           <input className="emailInput" placeholder="Email" type="text"/>
-           <input className="passwordInput" placeholder="Password" type="password"/>
+           <input className="logInEmailInput" placeholder="Email" type="text"/>
+           <input className="logInPasswordInput" placeholder="Password" type="password"/>
            <button className="continueButton">Continue</button>
        </Aux>
     )
