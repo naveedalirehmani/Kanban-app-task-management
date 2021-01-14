@@ -1,15 +1,17 @@
 body {
     margin: 0px;
     padding: 0px;
-    background:linear-gradient(90deg,#ecfff2,#f9e1ff) 
+    /* background:linear-gradient(90deg,#ecfff2,#f9e1ff)  */
+    font-family: sans-serif;
   }
   ::selection{
     background-color:#6666667a;
   }
   .home {
     /* border: 2px solid red; */
-    height: 90vh;
+    /* height: 90vh; */
     padding: 0px;
+    width:100vw;
   }
   .main {
     /* border: 2px solid green; */
@@ -18,16 +20,25 @@ body {
   .buttonsAlign{
    padding-left:70%;
   }
-  .main p {
+ .title {
     color: #000000;
     margin: 1rem;
     margin-top: 0rem;
-    font-size: 40px;
+    font-size: 56px;
     line-height: 48px;
     text-transform: capitalize;
     /* letter-spacing: -0.1rem; */
-    font-family: "Yusei Magic", sans-serif;
     font-weight: bolder;
+  }
+  .intro{
+    color:#4d4d4d;
+    margin: 1rem;
+    margin-top: 0rem;
+    font-size: 21px;
+    line-height: 30px;
+    text-transform: capitalize;
+    /* letter-spacing: -0.1rem; */
+    font-weight: 400;
   }
   .loginButton,.signupButton{
     border: 2px solid #363636;
@@ -37,13 +48,11 @@ body {
     margin:10px 0.5rem;
     font-size: 1.3rem;
     color: #363636;
-    font-family:sans-serif;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: 250ms;
     /* font-weight:bolder; */
-    font-family: "Yusei Magic", sans-serif;
     outline:none;
   }
   .loginButton::before,.signupButton::before{
@@ -70,28 +79,30 @@ body {
   .icons {
     /* margin-top: 5rem; */
     display: flex;
+    flex-wrap:wrap;
     justify-content: space-around;
   }
   .left,.right {
     display:flex;
     flex-direction: column;
     /* border:2px solid blue; */
-    width: 45%;
+    width: 620px;
     height: 23rem;
-    background-color: #f5c3ff;
+    background-color: #d7edff;
     border-radius: 20px;
     position: relative;
-    box-shadow: 5px 5px 10px rgb(116, 116, 116);
+    /* box-shadow: 5px 5px 10px rgb(116, 116, 116); */
     align-items:center;
+    margin-bottom:4rem;
   }
   .right {
-    background-color: #d3fadf;
+    background-color: #d4ffe1;
     flex-direction:row;
   }
   img {
     /* border: 1px solid black; */
     border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(116, 116, 116);
+    box-shadow: 2px 2px 5px rgb(116, 116, 116);
     transition:250ms;
   }
   .ouch1 {
@@ -138,12 +149,12 @@ body {
   .ouch6:hover {
     z-index: 3;
     cursor: pointer;
-    transform:scale(1.1)
+    transform:scale(1.02)
   }
   .ouch1:hover,.vector:hover{
     z-index: 4;
     cursor: pointer;
-    transform:scale(1.1)
+    transform:scale(1.02)
   }
   .vector {
     width: 30rem;

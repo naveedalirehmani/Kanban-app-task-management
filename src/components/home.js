@@ -45,7 +45,8 @@ function Home() {
             <button className="loginButton" onClick={logInFunction}>Log In</button>
             <button className="signupButton" onClick={signInFunction}>Sign Up</button>
             </div>
-            <p>We Are TodoMatic <br/>Bring your team together, Choose a better way to work.</p>
+            <p className="title">We Are TodoMatic</p>
+            <p className="intro">Regain clarity and calmness by getting all those tasks out of your head and <br/> onto your to-do list (no matter where you are or what device you use).</p>
             <div className="icons">
             <div className="left">
               {isLogInIn ? logInDiv : logInHome }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './signUpForm.css';
-import signUpSvg from '../images/Work_time.svg'
+import signUpSvg from '../images/Working.svg'
 import Aux from '../hoc/auxiliary';
 
 function logInForm(props){

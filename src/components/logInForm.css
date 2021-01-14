@@ -1,12 +1,11 @@
 .logInEmailInput,.logInPasswordInput{
     background:none;
     border:none;
-    border-bottom:4px solid rgb(66, 66, 66);
+    border-bottom:2px solid rgb(117, 117, 117);
     font-size:1.2rem;
     margin:0.5rem;
     color:black;
     outline:none;
-    font-family: "Yusei Magic", sans-serif;
 }
 .logInSvg{
     margin:2rem 0rem 1rem 0rem;

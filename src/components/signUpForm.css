@@ -7,12 +7,11 @@
 .signUpEmailInput,.signUpPasswordInput,.signUpName,.signUpAge{
     background:none;
     border:none;
-    border-bottom:4px solid rgb(66, 66, 66);
+    border-bottom:2px solid rgb(117, 117, 117);
     font-size:1.2rem;
     margin:0.5rem;
     color:black;
     outline:none;
-    font-family: "Yusei Magic", sans-serif;
 }
 .signUpName,.signUpAge{
   display:inline;
