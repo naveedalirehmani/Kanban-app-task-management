@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import Aux from "../hoc/auxiliary";
 import Loginform from "./logInForm";
@@ -10,13 +10,22 @@ import Ouch6 from "../images/ouch6.png";
 import vector from "../images/vectorCreator2.jpg";
 
 function Home(props) {
+  //PUSHING USER DATA INTO THE ARRAY-------------------------------------------------------------
   const [userData, setUserData] = useState([]);
   const addUser = (data) => {
     setUserData([...userData, data]);
+    alert("you have been signed up")
   };
-  console.log(userData);
+  //LOCAL STORAGE SETING DATA--------------------------------------------------------------------
+  useEffect(() => {
+    setUserData(JSON.parse(localStorage.userData ? localStorage.userData : "[]"));
+  }, []);
 
-  const [isLogInIn, isLogInBack] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  }, [userData]);
+  // CONDITIONAL RENDERING LOGIN AND SIGNIN FORM--------------------------------------------------
+  const [isLogInIn, isLogInBack] = useState(true);
   const [isSignInIn, isSignInBack] = useState(true);
   const logInFunction = () => {
     isLogInBack(true);
@@ -26,7 +35,14 @@ function Home(props) {
     isLogInBack(false);
     isSignInBack(true);
   };
-  const logInDiv = <Loginform></Loginform>;
+  function checkName(data){
+    userData.find((element)=>{
+      if(element.email === data.email && element.password === data.password){
+        alert("welcome "+ element.name)
+      }
+    })
+  }
+  const logInDiv = <Loginform checkName={checkName}></Loginform>;
   const logInHome = (
     <Aux>
       <img className="ouch1" src={Ouch1} alt="" />
@@ -37,6 +53,8 @@ function Home(props) {
   );
   const signUpDiv = <Signupform addName={addUser}></Signupform>;
   const signUpHome = <img className="vector" src={vector} alt="" />;
+
+  //RETURN------------------------------------------------------------------------------------------------------
   return (
     <section className="home">
       <div className="main">

@@ -10,8 +10,7 @@ function LogInForm(props) {
     email: "",
     password: "",
   });
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
     props.addName(user);
   }
   function handleChange(e) {
@@ -19,7 +18,6 @@ function LogInForm(props) {
   }
   return (
     <Aux>
-      <form onSubmit={handleSubmit} action="">
         <div>
           <img className="signUpSvg" src={signUpSvg} alt="" />
         </div>
@@ -52,11 +50,10 @@ function LogInForm(props) {
             type="password"
             onChange={handleChange}
           />
-          <button type="submit" className="continueButton">
+          <button onClick={handleSubmit} className="continueButton">
             Continue
           </button>
         </div>
-      </form>
     </Aux>
   );
 }
