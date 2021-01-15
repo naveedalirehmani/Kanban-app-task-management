@@ -3,7 +3,7 @@ import './logInForm.css';
 import logInSvg from '../images/shared_workspace.svg'
 import Aux from '../hoc/auxiliary';
 
-function logInForm(props){
+function LogInForm(props){
     return(
        <Aux>
            <img className="logInSvg"src={logInSvg} alt=""/>
@@ -14,4 +14,4 @@ function logInForm(props){
     )
 }
 
-export default logInForm;
+export default LogInForm;
