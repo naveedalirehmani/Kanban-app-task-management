@@ -13,20 +13,28 @@ function Home(props) {
   //PUSHING USER DATA INTO THE ARRAY-------------------------------------------------------------
   const [userData, setUserData] = useState([]);
   const addUser = (data) => {
-    setUserData([...userData, data]);
-    alert("you have been signed up")
+    const filter = userData.filter((c) => c.name == data.name);
+    if (filter.length > 0) {
+      alert("Name taken");
+      return false;
+    } else {
+      setUserData([...userData, data]);
+    }
+    return true;
   };
   //LOCAL STORAGE SETING DATA--------------------------------------------------------------------
   useEffect(() => {
-    setUserData(JSON.parse(localStorage.userData ? localStorage.userData : "[]"));
+    setUserData(
+      JSON.parse(localStorage.userData ? localStorage.userData : `[]`)
+    );
   }, []);
 
   useEffect(() => {
     localStorage.setItem("userData", JSON.stringify(userData));
   }, [userData]);
   // CONDITIONAL RENDERING LOGIN AND SIGNIN FORM--------------------------------------------------
-  const [isLogInIn, isLogInBack] = useState(true);
-  const [isSignInIn, isSignInBack] = useState(true);
+  const [isLogInIn, isLogInBack] = useState(false);
+  const [isSignInIn, isSignInBack] = useState(false);
   const logInFunction = () => {
     isLogInBack(true);
     isSignInBack(false);
@@ -35,12 +43,12 @@ function Home(props) {
     isLogInBack(false);
     isSignInBack(true);
   };
-  function checkName(data){
-    userData.find((element)=>{
-      if(element.email === data.email && element.password === data.password){
-        alert("welcome "+ element.name)
+  function checkName(data) {
+    userData.find((element) => {
+      if (element.email === data.email && element.password === data.password) {
+        alert("welcome " + element.name);
       }
-    })
+    });
   }
   const logInDiv = <Loginform checkName={checkName}></Loginform>;
   const logInHome = (
@@ -51,7 +59,9 @@ function Home(props) {
       <img className="ouch6" src={Ouch6} alt="" />
     </Aux>
   );
-  const signUpDiv = <Signupform addName={addUser}></Signupform>;
+  const signUpDiv = (
+    <Signupform addName={addUser} userData={userData}></Signupform>
+  );
   const signUpHome = <img className="vector" src={vector} alt="" />;
 
   //RETURN------------------------------------------------------------------------------------------------------

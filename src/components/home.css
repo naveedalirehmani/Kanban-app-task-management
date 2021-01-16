@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    outline:none;
     /* background:linear-gradient(90deg,#ecfff2,#f9e1ff)  */
     font-family: sans-serif;
   }
@@ -29,6 +30,7 @@ body {
     text-transform: capitalize;
     /* letter-spacing: -0.1rem; */
     font-weight: bolder;
+    /* text-shadow:-3px -3px 6px rgb(201, 201, 201); */
   }
   .intro{
     color:#4d4d4d;
