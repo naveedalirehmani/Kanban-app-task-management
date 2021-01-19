@@ -33,8 +33,8 @@ function Home(props) {
     localStorage.setItem("userData", JSON.stringify(userData));
   }, [userData]);
   // CONDITIONAL RENDERING LOGIN AND SIGNIN FORM--------------------------------------------------
-  const [isLogInIn, isLogInBack] = useState(false);
-  const [isSignInIn, isSignInBack] = useState(false);
+  const [isLogInIn, isLogInBack] = useState(true);
+  const [isSignInIn, isSignInBack] = useState(true);
   const logInFunction = () => {
     isLogInBack(true);
     isSignInBack(false);
@@ -44,11 +44,14 @@ function Home(props) {
     isSignInBack(true);
   };
   function checkName(data) {
-    userData.find((element) => {
-      if (element.email === data.email && element.password === data.password) {
-        alert("welcome " + element.name);
-      }
+    let result = userData.find((element) => {
+      return (element.email === data.email && element.password === data.password)
     });
+    if(result){
+      alert("welcome "+result.name)
+    }else{
+      alert("incorrect credidentials")
+    }
   }
   const logInDiv = <Loginform checkName={checkName}></Loginform>;
   const logInHome = (
