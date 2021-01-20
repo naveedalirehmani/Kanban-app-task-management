@@ -8,12 +8,15 @@ import Ouch2 from "../images/ouch2.png";
 import Ouch3 from "../images/ouch3.png";
 import Ouch6 from "../images/ouch6.png";
 import vector from "../images/vectorCreator2.jpg";
+import { useHistory } from "react-router-dom";
 
 function Home(props) {
   //PUSHING USER DATA INTO THE ARRAY-------------------------------------------------------------
   const [userData, setUserData] = useState([]);
+  const history = useHistory();
+
   const addUser = (data) => {
-    const filter = userData.filter((c) => c.name == data.name);
+    const filter = userData.filter((element) => element.name == data.name);
     if (filter.length > 0) {
       alert("Name taken");
       return false;
@@ -33,8 +36,8 @@ function Home(props) {
     localStorage.setItem("userData", JSON.stringify(userData));
   }, [userData]);
   // CONDITIONAL RENDERING LOGIN AND SIGNIN FORM--------------------------------------------------
-  const [isLogInIn, isLogInBack] = useState(true);
-  const [isSignInIn, isSignInBack] = useState(true);
+  const [isLogInIn, isLogInBack] = useState(false);
+  const [isSignInIn, isSignInBack] = useState(false);
   const logInFunction = () => {
     isLogInBack(true);
     isSignInBack(false);
@@ -43,12 +46,14 @@ function Home(props) {
     isLogInBack(false);
     isSignInBack(true);
   };
+  //  LOGIN RESULT CHECK AND ROUTE TO COMPONENT ------------------------------------------
   function checkName(data) {
     let result = userData.find((element) => {
       return (element.email === data.email && element.password === data.password)
     });
     if(result){
-      alert("welcome "+result.name)
+      props.sendUserobject(result)
+      history.push('/userprofile');
     }else{
       alert("incorrect credidentials")
     }

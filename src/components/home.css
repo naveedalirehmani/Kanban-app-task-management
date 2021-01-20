@@ -1,8 +1,11 @@
+
+
 body {
     margin: 0px;
     padding: 0px;
     outline:none;
-    /* background:linear-gradient(90deg,#ecfff2,#f9e1ff)  */
+    /* background:linear-gradient(90deg,#ecfff2,#f9e1ff); */
+    /* background-color: #4d4d4d; */
     font-family: sans-serif;
   }
   ::selection{
@@ -45,7 +48,7 @@ body {
   .loginButton,.signupButton{
     border: 2px solid #363636;
     background:none;
-    border-radius:8px;
+    /* border-radius:25px; */
     padding: 0.5rem 2rem;
     margin:10px 0.5rem;
     font-size: 1.3rem;
@@ -89,11 +92,11 @@ body {
     flex-direction: column;
     /* border:2px solid blue; */
     width: 620px;
-    height: 23rem;
+    height: 24rem;
     background-color: #d7edff;
     border-radius: 20px;
     position: relative;
-    /* box-shadow: 5px 5px 10px rgb(116, 116, 116); */
+    box-shadow: 1px 1px 3px rgb(116, 116, 116);
     align-items:center;
     margin-bottom:4rem;
   }

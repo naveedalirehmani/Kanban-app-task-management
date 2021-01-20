@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./signUpForm.css";
-import signUpSvg from "../images/Working.svg";
+import Resume from "../images/Resume.svg";
 import Aux from "../hoc/auxiliary";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF,faGoogle,faTwitter,faApple,faAirbnb,faGithub,faGripfire} from '@fortawesome/free-brands-svg-icons' 
+
 
 function LogInForm(props) {
   const [user, setUser] = useState({
@@ -28,9 +31,15 @@ function LogInForm(props) {
   return (
     <Aux>
       <div>
-        <img className="signUpSvg" src={signUpSvg} alt="" />
+        <img className="signUpSvg" src={Resume} alt="" />
       </div>
       <div className="borderDiv">
+      <div className="social">
+        <button ><FontAwesomeIcon icon={faApple}></FontAwesomeIcon></button>
+        <button ><FontAwesomeIcon icon={faAirbnb}></FontAwesomeIcon></button>
+        <button ><FontAwesomeIcon icon={faGripfire}></FontAwesomeIcon></button>
+        <p>Use Your Email For Registration</p>
+      </div>
         <input
           id="name"
           className="signUpName"
