@@ -1,27 +1,27 @@
-div{
+div {
   /* border:1px solid red */
 }
-.navbar{
-  display:flex;
+.navbar {
+  display: flex;
   z-index: 3;
-  background-color:#3d3d3d;
-  color:white;
+  background-color: #3d3d3d;
+  color: white;
 }
-.navbar .Title{
+.navbar .Title {
   padding: 1.1rem;
   padding-top: 1.3rem;
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
 }
-.navbar .search{
+.navbar .search {
   display: flex;
   align-items: center;
   position:relative
 }
-.navbar .search input{
+.navbar .search input {
   padding: 0.5rem;
-  background-color:#646464;
+  background-color: #646464;
   /* font-size: 1.3rem; */
   font-weight:lighter;
   color:white;
@@ -52,45 +52,200 @@ div{
 }
 .navbar .buttons{
   margin-left:auto;
+  font-weight: lighter;
+  color: white;
+  outline: none;
+  border: none;
+  width: 20rem;
+  border-radius: 2px;
+  transition: 100ms;
+}
+.navbar .search input::placeholder {
+  color: rgb(187, 187, 187);
+  font-weight: lighter;
+}
+.navbar .search input:focus {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.navbar .search input:hover {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.navbar .buttons {
+  margin-left: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 17rem;
 }
-.navbar .buttons button{
-  width:3rem;
+.navbar .buttons button {
+  width: 3rem;
   height: 3rem;
   font-size: 0.9rem;
   text-align: center;
-  border:none;
-  cursor:pointer;
-  color:white;
+  border: none;
+  cursor: pointer;
+  color: white;
   border-radius: 4px;
   background-color: #646464;
-
+  position: relative;
+  outline: none;
 }
-.navbar .buttons button:hover{
+.navbar .buttons button:hover {
   background-color: #bcccff77;
 }
-
-.profile{
- margin-left: 2rem;
- margin-right: 2rem;
- display: flex;
- align-items: center;
+.navbar .buttons span {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1f54ff;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  left: -2rem;
+  top: 4rem;
+  z-index: 1;
 }
-.profile .profileImage{
-  width:3rem;
+.navbar .buttons button:hover span {
+  visibility: visible;
+}
+.profile {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  width: 16rem;
+}
+.profile .profileImage {
+  width: 3rem;
   height: 3rem;
-  border-radius:50%;
+  border-radius: 50%;
   box-shadow: none;
 }
-.profile p{
-  color:white;
+.profile p {
+  color: white;
   font-size: 1rem;
 }
-.content{
+.content {
   z-index: -1;
   height: 91.9vh;
   background-color: white;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.create {
+  /* border:1px solid green; */
+  display: flex;
+  flex-direction: row;
+  width: 95vw;
+  margin: 1rem auto;
+  background-color: #3d3d3d;
+  padding: 1rem;
+  border-radius: 10px;
+  /* box-shadow: 6px 6px 8px rgb(172, 172, 172); */
+}
+.create p {
+  color: white;
+  font-size: large;
+}
+.create input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #646464dc;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: white;
+  outline: none;
+  border: none;
+  width: 30rem;
+  border-radius: 2px;
+  transition: 100ms;
+}
+.create input::placeholder {
+  color: rgb(187, 187, 187);
+  font-weight: lighter;
+}
+.create input:focus {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.create input:hover {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.create .taskButtons {
+  padding-top: 1rem;
+}
+.create button {
+  margin: 0.5rem;
+  margin-top: 2.5rem;
+  padding: 0.5rem 0rem;
+  width: 6rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  font-size: medium;
+}
+.create .add {
+  background-color: rgb(21, 56, 253);
+  border: 1px solid rgb(21, 56, 253);
+  transition: 200ms;
+  /* margin-left: 0px; */
+}
+.create .add:hover {
+  background-color: rgb(17, 44, 197);
+  border: 1px solid rgb(17, 44, 197);
+}
+.create .setDate {
+  background-color: rgb(21, 56, 253);
+  border: 1px solid rgb(21, 56, 253);
+  transition: 200ms;
+}
+.create .setDate:hover {
+  background-color:  rgb(17, 44, 197);
+  border: 1px solid   rgb(17, 44, 197);
+}
+.create .setPriorityHigh {
+  background-color: rgb(228, 18, 18);
+  border: 1px solid rgb(228, 18, 18);
+  transition: 200ms;
+}
+.create .setPriorityHigh:hover {
+  background-color: rgb(190, 21, 21);
+  border: 1px solid rgb(190, 21, 21);
+}
+.create .setPriorityMedium {
+  background-color: rgb(16, 187, 16);
+  border: 1px solid rgb(16, 187, 16);
+  transition: 200ms;
+}
+.create .setPriorityMedium:hover {
+  background-color: rgb(15, 158, 15);
+  border: 1px solid rgb(15, 158, 15);
+}
+.create .setPriorityLow {
+  background-color: rgb(228, 224, 19);
+  border: 1px solid rgb(228, 224, 19);
+  transition: 200ms;
+}
+.create .setPriorityLow:hover {
+  background-color: #c5c212;
+  border: 1px solid rgb(197, 194, 18);
+}
+.svgAddTask{
+  margin-left: auto;
+}
+.svgAddTask img{
+  box-shadow: none;
+  width: 15rem;
 }
