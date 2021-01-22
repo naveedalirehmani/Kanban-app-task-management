@@ -1,69 +1,90 @@
-.profile {
-  display: flex;
-  /* height: 92.5vh; */
-  padding: 1.65rem;
-  background: radial-gradient(#0084f0, #d4ffe1);
-  /* background-image: url(../images/ouch6.png); */
-  /* background-size:cover; */
+div{
+  /* border:1px solid red */
 }
-.userData,
-.dashboard {
-  height: 92vh;
-  background-color: #ffffffd2;
+.navbar{
+  display:flex;
+  z-index: 3;
+  background-color:#3d3d3d;
+  color:white;
 }
-.userData {
-  border-right: 2px solid #858585;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  width: 21vw;
-}
-.notification {
-  padding: 2rem 0rem 2rem 0rem;
-}
-.dashboard {
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  /* border:3px solid blue; */
-  width: 76vw;
-}
-.profileData {
-  padding: 1 rem 0rem 1 rem 0rem;
-  text-align: center;
-}
-.profilePicture {
-  width: 7rem;
-  height: auto;
-  border-radius: 50%;
-}
-.profileData h3 {
-  font-size: 1.5rem;
-  color: black;
-  margin: 10px;
-}
-.profileData h4 {
-  font-size: 0.7rem;
-  color: rgb(68, 68, 68);
-  margin: 10px;
-}
-.buttons {
-  display: flex;
-  flex-direction: column;
-}
-.buttons button {
-  margin: 5px 20px;
-  border: 1px solid #363636;
-  border-radius: 10px;
-  padding: 0.7rem 2rem 0.7rem 0.5rem;
+.navbar .Title{
+  padding: 1.1rem;
+  padding-top: 1.3rem;
   font-size: 1rem;
-  background-color: #363636;
-  color: white;
-  text-align: left;
-  transition: 250ms;
-  letter-spacing:1px;
+  text-align: center;
+  text-transform: uppercase;
 }
-.buttons button:hover {
-    background: none;
-    color: #363636;
-    font-weight:bolder;
-    cursor: pointer;
+.navbar .search{
+  display: flex;
+  align-items: center;
+}
+.navbar .search input{
+  padding: 0.5rem;
+  background-color:#646464;
+  /* font-size: 1.3rem; */
+  font-weight:lighter;
+  color:white;
+  outline:none;
+  border:none;
+  width:20rem;
+  border-radius:2px;
+  transition:100ms;
+}
+.navbar .search input::placeholder{
+  color:rgb(187, 187, 187);
+  font-weight:lighter;
+}
+.navbar .search input:focus{
+  color:black;
+  font-weight:lighter;
+  background-color:white
+}
+.navbar .search input:hover{
+  color:black;
+  font-weight:lighter;
+  background-color: #aabeff34;
+}
+.navbar .buttons{
+  margin-left:auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 17rem;
+}
+.navbar .buttons button{
+  width:3rem;
+  height: 3rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border:none;
+  cursor:pointer;
+  color:white;
+  border-radius: 4px;
+  background-color: #646464;
+
+}
+.navbar .buttons button:hover{
+  background-color: #bcccff77;
+}
+
+.profile{
+ margin-left: 2rem;
+ margin-right: 2rem;
+ display: flex;
+ align-items: center;
+}
+.profile .profileImage{
+  width:3rem;
+  height: 3rem;
+  border-radius:50%;
+  box-shadow: none;
+}
+.profile p{
+  color:white;
+  font-size: 1rem;
+}
+.content{
+  z-index: -1;
+  height: 91.9vh;
+  background-color: white;
 }

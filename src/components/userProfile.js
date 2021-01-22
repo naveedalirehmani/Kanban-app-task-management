@@ -1,33 +1,53 @@
-import React from 'react';
-import './userProfiles.css';
-import maleProfilePicture from "../images/profileFemale.jpg"
+import React from "react";
+import "./userProfiles.css";
+import maleProfilePicture from "../images/profileFemale.jpg";
 // import Background from "../images/9.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome,faCamera,faFolder,faInbox,faBell} from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faHome,
+  faCamera,
+  faFolder,
+  faInbox,
+  faBell,
+  faPlus,
+  faUser,
+  faQuestionCircle
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faGoogle,
+  faTwitter,
+  faApple,
+  faAirbnb,
+  faGithub,
+  faGripfire,
+} from "@fortawesome/free-brands-svg-icons";
 
 function User(props) {
-  console.log(props.userObject)
+  console.log(props.userObject);
   return (
-    <section className='profile'>
-      <div className="userData">
-        <div className="notification">
-          <p>TodoMatic<FontAwesomeIcon icon={faHome}></FontAwesomeIcon><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></p>
-        </div>
-        <div className="profileData">
-          <img className="profilePicture" src={maleProfilePicture} alt=""/>
-          <h3>{props.userObject.name}Naveed Ali Rehmani</h3>
-          <h4>{props.userObject.email}naveedalirehmani123@gmail.com</h4>
-        </div>
+    <section className="dashboard">
+      <nav className="navbar">
+        <div className="Title">TODOMATIC</div>
+        <div className="search">
+          <input placeHolder="   Search" type="text">
+          </input>
+          </div>
         <div className="buttons">
-          <button><FontAwesomeIcon icon={faHome}></FontAwesomeIcon> Dashboard</button>
-          <button><FontAwesomeIcon icon={faCamera}></FontAwesomeIcon> Position</button>
-          <button><FontAwesomeIcon icon={faBell}></FontAwesomeIcon> Inbox</button>
-          <button><FontAwesomeIcon icon={faInbox}></FontAwesomeIcon> Matches</button>
-          <button><FontAwesomeIcon icon={faFolder}></FontAwesomeIcon> Market</button>
+          <button><FontAwesomeIcon icon={faBell}></FontAwesomeIcon></button>
+          <button><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></button>
+          <button><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></button>
+          <button><FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon></button>
+          <button><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></button>
         </div>
+        <div className="profile">
+          <p>{props.userObject.name}</p>
+          <img src={maleProfilePicture} alt="" className="profileImage" />
+        </div>
+      </nav>
+      <div className="content">
+
       </div>
-      <div className="dashboard"></div>
     </section>
   );
 }
