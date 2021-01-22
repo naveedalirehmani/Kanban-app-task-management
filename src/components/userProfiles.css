@@ -17,11 +17,41 @@ div {
 .navbar .search {
   display: flex;
   align-items: center;
+  position:relative
 }
 .navbar .search input {
   padding: 0.5rem;
   background-color: #646464;
   /* font-size: 1.3rem; */
+  font-weight:lighter;
+  color:white;
+  outline:none;
+  border:none;
+  width:20rem;
+  border-radius:2px;
+  transition:100ms;
+}
+.navbar .search input::placeholder{
+  color:rgb(187, 187, 187);
+  font-weight:lighter;
+}
+.navbar .search input:focus{
+  color:black;
+  font-weight:lighter;
+  background-color:white
+}
+.navbar .search input:hover{
+  color:black;
+  font-weight:lighter;
+  background-color: #aabeff34;
+}
+.search-icon{
+  left:92%;
+  top: 35%;
+  position: absolute;
+}
+.navbar .buttons{
+  margin-left:auto;
   font-weight: lighter;
   color: white;
   outline: none;

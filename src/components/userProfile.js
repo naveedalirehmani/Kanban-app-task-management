@@ -11,7 +11,8 @@ import {
   faBell,
   faPlus,
   faUser,
-  faQuestionCircle
+  faQuestionCircle,
+  faSearch
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
@@ -26,13 +27,17 @@ import {
 function User(props) {
   console.log(props.userObject);
   return (
-    <section className="dashboard">
-      <nav className="navbar">
-        <div className="Title">TODOMATIC</div>
-        <div className="search">
-          <input placeHolder="   Search" type="text">
-          </input>
-          </div>
+     <section className="dashboard">
+       <nav className="navbar">
+         <div className="Title">TODOMATIC</div>
+         <div className="search">
+           <input id="search-bar" 
+            type="text"
+            placeholder="Search" ></input>
+            <div className="search-icon">
+            <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+            </div>
+        </div>
         <div className="buttons">
           <button><FontAwesomeIcon icon={faBell}></FontAwesomeIcon><span>Notifications</span></button>
           <button><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon><span>Create</span></button>
