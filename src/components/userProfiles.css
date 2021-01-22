@@ -17,6 +17,7 @@ div{
 .navbar .search{
   display: flex;
   align-items: center;
+  position:relative
 }
 .navbar .search input{
   padding: 0.5rem;
@@ -43,6 +44,11 @@ div{
   color:black;
   font-weight:lighter;
   background-color: #aabeff34;
+}
+.search-icon{
+  left:92%;
+  top: 35%;
+  position: absolute;
 }
 .navbar .buttons{
   margin-left:auto;
