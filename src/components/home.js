@@ -52,6 +52,7 @@ function Home(props) {
       return (element.email === data.email && element.password === data.password)
     });
     if(result){
+      localStorage.setItem("current_login_user", result.id);
       props.sendUserobject(result)
       history.push('/userprofile');
     }else{

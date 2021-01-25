@@ -1,0 +1,57 @@
+.taskList {
+  width: 60rem;
+  /* height: 6.5rem; */
+  border-bottom: 1px solid grey;
+  margin: 0.5rem auto;
+  padding-left: 1rem;
+}
+.taskData h2 {
+  margin: 0px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #da673c;
+  /* text-decoration: underline; */
+  /* background-color: #3d414f; */
+  /* width: 13rem; */
+}
+.taskData p {
+  font-size: larger;
+  margin-top: 5px;
+  margin-left: 0px;
+  color: rgb(238, 238, 238);
+}
+.editButtons {
+  display: flex;
+}
+.editButtons p {
+  margin: 16px auto 0px 0px;
+  font-size: 1rem;
+  /* text-decoration: underline; */
+  color: #3173bd;
+}
+.editButtons button {
+  margin: 5px;
+  width: 5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.editButtons .edit {
+  border: 2px solid #38524c;
+  color: #42af7c;
+  background: #38524c;
+}
+.editButtons .edit:hover {
+  background-color: #36393f;
+  border: 2px solid #36393f;
+}
+.editButtons .delete {
+  border: 2px solid rgba(241, 237, 16, 0);
+  color: rgba(255, 0, 0, 0.856);
+  background: rgba(241, 16, 16, 0.226);
+}
+.editButtons .delete:hover {
+  border: 2px solid rgba(241, 16, 16, 0);
+  background: rgba(241, 16, 16, 0.096);
+}

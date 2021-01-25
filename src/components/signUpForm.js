@@ -12,6 +12,7 @@ function LogInForm(props) {
     age: null,
     email: "",
     password: "",
+    id: Math.random().toString(36).substring(7)
   });
   function handleSubmit() {
     if (user.name && user.email && user.age && user.password) {

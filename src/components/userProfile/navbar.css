@@ -1,0 +1,133 @@
+div {
+    /* border:1px solid red */
+  }
+  .navbar {
+    display: flex;
+    z-index: 3;
+    background-color: #202225;
+    color: white;
+  }
+  .navbar .Title {
+    padding: 1.1rem;
+    padding-top: 1.3rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .navbar .search {
+    display: flex;
+    align-items: center;
+    position:relative
+  }
+  .navbar .search input {
+    padding: 0.5rem;
+    background-color: #36393f;
+    /* font-size: 1.3rem; */
+    font-weight:lighter;
+    color:white;
+    outline:none;
+    border:none;
+    width:20rem;
+    border-radius:2px;
+    transition:100ms;
+  }
+  .navbar .search input::placeholder{
+    color:rgb(187, 187, 187);
+    font-weight:lighter;
+  }
+  .navbar .search input:focus{
+    color:black;
+    font-weight:lighter;
+    background-color:white
+  }
+  .navbar .search input:hover{
+    color:black;
+    font-weight:lighter;
+    background-color: #aabeff34;
+  }
+  .search-icon{
+    left:92%;
+    top: 35%;
+    position: absolute;
+  }
+  .navbar .search input::placeholder {
+    color: rgb(187, 187, 187);
+    font-weight: lighter;
+  }
+  .navbar .search input:focus {
+    color: black;
+    font-weight: lighter;
+    background-color: white;
+  }
+  .navbar .search input:hover {
+    color: black;
+    font-weight: lighter;
+    background-color: white;
+  }
+  .navbar .buttons {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 17rem;
+  }
+  .navbar .buttons{
+    margin-left:auto;
+    font-weight: lighter;
+    color: white;
+    outline: none;
+    border: none;
+    width: 14rem;
+    border-radius: 2px;
+    transition: 100ms;
+  }
+  .navbar .buttons button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: #42af7c;
+    border-radius: 4px;
+    background-color: #38524c;
+    position: relative;
+    outline: none;
+  }
+  .navbar .buttons button:hover {
+    background-color:#36393f;
+  }
+  .navbar .buttons span {
+    visibility: hidden;
+    width: 120px;
+    background-color:#5367a8;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    left: -2rem;
+    top: 4rem;
+    z-index: 2;
+  }
+  .navbar .buttons button:hover span {
+    visibility: visible;
+  }
+  .profile {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    width: 19rem;
+    /* padding-left: 4rem; */
+  }
+  .profile .profileImage {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+  .profile p {
+    color: #3173bd;
+    font-size: 1rem;
+  }
