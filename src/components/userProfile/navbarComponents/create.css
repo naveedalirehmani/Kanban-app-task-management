@@ -47,11 +47,11 @@
     background-color: white;
   }
   .create .taskButtons {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
+    display: flex;
   }
   .create button {
     margin: 0.5rem;
-    margin-top: 2.5rem;
     padding: 0.5rem 0rem;
     width: 6rem;
     border: 1px solid white;
@@ -77,6 +77,22 @@
     background-color: #5367a8;
     border: 1px solid #5367a8;
     transition: 200ms;
+  }
+  .create p{
+    padding-top:0.5rem;
+  }
+  .create #priority{
+    margin: 0.5rem;
+    padding: 0.5rem 0rem;
+    width: 6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    color:white;
+    background-color: #5367a8;
+    border: 1px solid #5367a8;
+    font-size: medium;
+    outline:none;
+    position: relative;
   }
   .create .setDate:hover {
     background-color: #4059aa;
@@ -105,13 +121,13 @@
     box-shadow: none;
     width: 15rem;
   }
-  .drop{
+  .dropCreate{
     border:2px solid #202225;
     width: 3rem;
     height:3rem;
     position: absolute;
     transform: rotate(45deg);
-    left: 65%;
+    left: 63%;
     top:-4%;
     z-index: 2;
     background-color:  #202225;

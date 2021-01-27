@@ -53,7 +53,7 @@ function Home(props) {
     });
     if(result){
       localStorage.setItem("current_login_user", result.id);
-      props.sendUserobject(result)
+      props.sendUserObject(result)
       history.push('/userprofile');
     }else{
       alert("incorrect credidentials")
@@ -69,7 +69,7 @@ function Home(props) {
     </Aux>
   );
   const signUpDiv = (
-    <Signupform addName={addUser} userData={userData}></Signupform>
+    <Signupform addUser={addUser} userData={userData}></Signupform>
   );
   const signUpHome = <img className="vector" src={vector} alt="" />;
 

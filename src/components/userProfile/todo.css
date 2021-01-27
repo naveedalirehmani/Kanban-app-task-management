@@ -1,24 +1,58 @@
 .taskList {
   width: 60rem;
-  /* height: 6.5rem; */
-  border-bottom: 1px solid grey;
+  /* border-radius:4px; */
   margin: 0.5rem auto;
   padding-left: 1rem;
+  transition:200ms;
+  border-bottom:1px solid #da673c;
+}
+.taskList:hover {
+  background-color: #b4b4b409;
+}
+.taskList .priorityButton{
+  width: 4rem;
+  border: 2px solid #bbbd310c;
+  color: #d6da02;
+  background: #bbbd310c;
 }
 .taskData h2 {
   margin: 0px;
   font-size: 1.5rem;
   font-weight: 400;
   color: #da673c;
-  /* text-decoration: underline; */
-  /* background-color: #3d414f; */
-  /* width: 13rem; */
 }
 .taskData p {
   font-size: larger;
   margin-top: 5px;
   margin-left: 0px;
   color: rgb(238, 238, 238);
+}
+.taskData input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #51555e;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: white;
+  outline: none;
+  border: none;
+  width: 30rem;
+  border-radius: 2px;
+  transition: 100ms;
+}
+.taskData input::placeholder {
+  color: rgb(187, 187, 187);
+  font-weight: lighter;
+}
+.taskData input:focus {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.taskData input:hover {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
 }
 .editButtons {
   display: flex;
@@ -36,6 +70,7 @@
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
+  outline:none;
 }
 .editButtons .edit {
   border: 2px solid #38524c;

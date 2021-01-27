@@ -1,0 +1,48 @@
+div{
+    /* border: 1px solid red; */
+}
+
+.sortBy {
+    margin: 1rem auto;
+    padding: 3rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: colum;
+    width: 50vw;
+    background-color: #202225;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    left: 19%;
+    top: 10%;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.788);
+  }
+  .sortBy button{
+    margin: 0.5rem;
+    padding: 0.5rem 0rem;
+    width: 10rem;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    font-size: medium;
+    outline:none;
+    position: relative;
+    background-color: #5367a8;
+    border: 1px solid #5367a8;
+    transition: 200ms;
+  }
+  .sortBy button:hover {
+    background-color: #4059aa;
+    border: 1px solid #4059aa;
+  }
+  .dropSortBy{
+    border:2px solid #202225;
+    width: 3rem;
+    height:3rem;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 90%;
+    top:-8%;
+    z-index: 2;
+    background-color:  #202225;
+  }

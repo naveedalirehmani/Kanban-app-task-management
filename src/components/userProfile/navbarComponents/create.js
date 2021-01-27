@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import "./create.css";
-import logInSvg from "../../images/project_completed.svg";
+import logInSvg from "../../../images/project_completed.svg";
 
-function create(props) {
+function Create(props) {
     let createdDate = new Date();
     const [data, setData] = useState({
         taskName: "",
         task: "",
-        id: Math.random().toString(36).substring(7),
+        priority:"high",
+        id: null,
         userId: localStorage.current_login_user,
-        createdDate:createdDate
+        createdDate: createdDate
     });
+
     function handleSubmit(e) {
         e.preventDefault()
-        props.setUserProfiledata(data)
+        props.setUserProfiledata({...data,id:Math.floor(Math.random()*100000)} )
     }
     function inputValue(e) {
-        setData({
-            ...data,
-            [e.target.id]: e.target.value
-        })
+        setData({...data,[e.target.id]: e.target.value})
     }
-    function enable() {
-        props.enable(0)
-    }
+
     return (
 
         <div className="create">
-            <form onSubmit={handleSubmit} className="createForm" action="">
+            <form className="createForm" action="">
                 <p>Add A Task</p>
                 <input id="taskName" onChange={inputValue} type="text" className="name" placeholder="Add Task Name Here" />
                 <input
@@ -38,26 +35,23 @@ function create(props) {
                     placeholder=" EXAMPLE.... Get Pastries From The Store #Task 9"
                 />
                 <div className="taskButtons">
-                    <button className="add">Add</button>
+                    <button className="add" onClick={handleSubmit}>Add</button>
                     <button className="setDate">Set Date</button>
-                    {/* <button className="setPriorityHigh">
-                        High<span>Set Priority</span>
-                    </button>
-                    <button className="setPriorityMedium">
-                        Medium<span>Set Priority</span>
-                    </button>
-                    <button className="setPriorityLow">
-                        Low<span>Set Priority</span>
-                    </button> */}
+                    <p>Set Priority</p>
+                <select id="priority" onChange={inputValue}>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
                 </div>
             </form>
             <div className="svgAddTask">
                 <img src={logInSvg} alt="" />
             </div>
-            <span className="drop"></span>
-            <span onClick={enable} className="closeButton">X</span>
+            <span className="dropCreate"></span>
+            <span onClick={()=>{props.enable(0)}} className="closeButton">X</span>
         </div>
     );
 }
 
-export default create;
+export default Create

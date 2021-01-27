@@ -16,7 +16,7 @@ function LogInForm(props) {
   });
   function handleSubmit() {
     if (user.name && user.email && user.age && user.password) {
-      const a = props.addName(user);
+      const a = props.addUser(user);
       if (a) {
         alert("Signup done");
       } else {

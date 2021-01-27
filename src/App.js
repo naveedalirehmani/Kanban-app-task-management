@@ -9,13 +9,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const[userObject,setuserObject]=useState('');
-  let sendUserobject =(result)=>{
+  let sendUserObject =(result)=>{
     setuserObject(result)
   }
   useEffect(() => {
     const userId = localStorage.current_login_user;
     if (userId) {
-      const user = JSON.parse(localStorage.userData).find((c) => c.id === userId);
+      const user = JSON.parse(localStorage.userData).find((element) => element.id === userId);
       if (user) {
         setuserObject(user)
       }
@@ -23,7 +23,7 @@ function App() {
   }, [])
   return (
     <Router>
-      <Route path="/" exact component={Home}><Home sendUserobject={sendUserobject}></Home></Route>
+      <Route path="/" exact component={Home}><Home sendUserObject={sendUserObject}></Home></Route>
       <Route path="/userprofile" exact component={User}><User userObject={userObject}></User></Route>
     </Router>
   );

@@ -1,7 +1,7 @@
 .content{
     padding-top:2rem;
-    height:86.5vh;
     overflow-y: scroll;
+    height:86.5vh;
     flex-direction: column;
     background-color: #2f3033;
 }
