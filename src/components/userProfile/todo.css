@@ -1,10 +1,8 @@
 @import 'antd/dist/antd.css';
 .taskList {
   width: 60rem;
-  /* border-radius:4px; */
   margin: 0.5rem auto;
   padding: 0.5rem;
-  /* padding-left: 1rem; */
   transition:200ms;
   border-bottom:1px solid grey;
 }
@@ -13,9 +11,11 @@
 }
 .taskList .priorityButton{
   width: 4rem;
+  padding: 0px;
   border: 2px solid #3172bd25;
   color: #3173bd;
   background:  #3172bd25;
+  font-size: smaller;
   margin-left: 93%;
   border-radius: 10px;
 }
@@ -64,13 +64,12 @@
 .editButtons p {
   margin: 16px auto 0px 0px;
   font-size: 1rem;
-  /* text-decoration: underline; */
   color: #3173bd;
 }
 .editButtons button {
   margin: 5px;
-  width: 5rem;
-  padding: 0.2rem;
+  width: 4rem;
+  /* padding: 0.2rem; */
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
@@ -95,36 +94,43 @@
   border: 2px solid rgba(241, 16, 16, 0);
   background: rgba(241, 16, 16, 0.096);
 }
-.comment-icon{
-color: #3173bd;
-padding: 1px;
-font-size: 28px;
-}
-
-.ant-modal-content {
-  background-color:#36393f !important;
-  
-}
-.ant-modal-header {
-  
-  background-color:#36393f !important;
-  
-}
-.ant-modal-title{
-  color: white;
-}
-.ant-modal-close-x{
-  color: white;
-}
-.ant-btn {
+.comment-button{
   border: 2px solid #38524c;
   color: #42af7c;
   background: #38524c;
 }
-.ant-btn:hover {
-  color: #42af7c;
-  background-color: #5a5e68;
-  border: 2px solid #5a5e68;
+.comment-button:hover {
+  background-color: #36393f;
+  border: 2px solid #36393f;
+}
+.ant-modal-content {
+  background-color:#202225 !important;
+}
+.ant-modal-header {
+  background-color:#202225 !important;
+}
+.ant-modal-title{
+  color: #da673c;
+  font-size: larger;
+  text-transform: uppercase;
+}
+.ant-modal-close-x{
+  color: white;
+}
+.ant-modal-header {
+  border-bottom: none;
+}
+.ant-modal-footer {
+  border-top: none;
+}
+.ant-modal-body {
+  padding: 1rem;
+}
+.ant-modal-body p{
+  font-size: 18px;
+  margin: 0px;
+  padding:0px;
+  color: rgb(238, 238, 238);
 }
 .comments-input {
   padding: 0.5rem;
@@ -156,4 +162,17 @@ font-size: 28px;
   background-color: white;
   color: black;
   transition: 0.3s;
+}
+/* .ant-btn {
+  border: 2px solid #38524c;
+  color: #42af7c;
+  background: #38524c;
+}
+.ant-btn:hover {
+  color: #42af7c;
+  background-color: #5a5e68;
+  border: 2px solid #5a5e68;
+} */
+div{
+  /* border:1px solid red; */
 }

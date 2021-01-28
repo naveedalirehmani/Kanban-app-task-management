@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Aux from "../../hoc/auxiliary";
-import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots,faCommentSlash,faCommentAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "antd";
 import "./todo.css";
@@ -51,9 +51,9 @@ function Todo(props) {
           Created On : {day} {month} {year}------- Remind Me On : 1 september
           2021
         </p>
-        <span className="comment-icon">
-          <FontAwesomeIcon icon={faCommentDots} onClick={showModal} />
-        </span>
+        <button className="comment-button" onClick={showModal}>
+          <FontAwesomeIcon icon={faCommentAlt}/>
+        </button>
         <button className="edit" onClick={() => setIsEditing(true)}>
           Edit
         </button>
@@ -89,7 +89,7 @@ function Todo(props) {
             tags.map((item, index) =>{
               return (
                 <>
-                <span key={index}>{item}</span> <br/>
+                <p key={index}>{item}</p> <br/>
                 </>
               )
             })
