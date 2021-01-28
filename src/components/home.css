@@ -3,17 +3,19 @@ body {
     padding: 0px;
     outline:none;
     /* background:linear-gradient(90deg,#ecfff2,#f9e1ff); */
-    /* background-color: #4d4d4d; */
     font-family: sans-serif;
   }
   ::selection{
-    background-color:#6666667a;
+    background-color:#38524c;
   }
   .home {
+    /* background-image: url(../images/background.webp);
+    background-size: contain; */
     /* border: 2px solid red; */
     /* height: 90vh; */
     padding: 0px;
     width:100vw;
+    height: 100vh;
   }
   .main {
     /* border: 2px solid green; */

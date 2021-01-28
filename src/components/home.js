@@ -8,6 +8,7 @@ import Ouch2 from "../images/ouch2.png";
 import Ouch3 from "../images/ouch3.png";
 import Ouch6 from "../images/ouch6.png";
 import vector from "../images/vectorCreator2.jpg";
+// import Background from "../images/background.webp";
 import { useHistory } from "react-router-dom";
 
 function Home(props) {

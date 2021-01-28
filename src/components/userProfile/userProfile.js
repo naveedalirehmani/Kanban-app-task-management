@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./userProfiles.css";
 import Create from "./navbarComponents/create";
 import SortBy from "./navbarComponents/sortBy";
+import Profile from "./navbarComponents/profile";
 import Notification from './notifications'
 import Todo from "./todo"
 import Navbar from "./navbar";
@@ -75,6 +76,7 @@ function User(props) {
         {(content == 1) ? <Notification></Notification> : null}
         {(content == 2) ? <Create setUserProfiledata={fUserProfileData} enable={element => setContent(element)}></Create> : null}
         {(content == 4) ? <SortBy enable={element => setContent(element)} sort={element => setView(element)}></SortBy> : null}
+        {(content == 5) ? <Profile enable={element => setContent(element)}></Profile> : null}
         {taskList}
       </div>
     </section>
