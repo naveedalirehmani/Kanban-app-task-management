@@ -10,7 +10,8 @@ function Create(props) {
         priority:"high",
         id: null,
         userId: localStorage.current_login_user,
-        createdDate: createdDate
+        createdDate: createdDate,
+        tags:[]
     });
 
     function handleSubmit(e) {

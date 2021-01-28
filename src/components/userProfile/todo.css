@@ -1,3 +1,4 @@
+@import 'antd/dist/antd.css';
 .taskList {
   width: 60rem;
   /* border-radius:4px; */
@@ -90,6 +91,11 @@
   border: 2px solid rgba(241, 16, 16, 0);
   background: rgba(241, 16, 16, 0.096);
 }
+.comment-icon{
+color: #3173bd;
+padding: 1px;
+font-size: 28px;
+}
 
 .ant-modal-content {
   background-color:#36393f !important;
@@ -106,16 +112,41 @@
 .ant-modal-close-x{
   color: white;
 }
-.ant-btn{
-  background-color: #3173bd;
+.ant-btn {
+  border: 2px solid #38524c;
+  color: #42af7c;
+  background: #38524c;
 }
-.comments-input  {
-    padding: 15px;
-    margin: 12px;
-    border-radius: 50px;
-    outline: none;
-    background-color: #192523;
-    color: white;
+.ant-btn:hover {
+  color: #42af7c;
+  background-color: #5a5e68;
+  border: 2px solid #5a5e68;
+}
+.comments-input {
+  padding: 0.5rem;
+  background-color: #51555e;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: white;
+  outline: none;
+  border: none;
+  width: 30rem;
+  border-radius: 2px;
+  transition: 100ms;
+}
+.comments-input::placeholder {
+  color: rgb(187, 187, 187);
+  font-weight: lighter;
+}
+.comments-input:focus {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
+}
+.comments-input:hover {
+  color: black;
+  font-weight: lighter;
+  background-color: white;
 }
 .comments-input:hover {
   background-color: white;
