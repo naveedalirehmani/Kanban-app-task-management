@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import Aux from "../../hoc/auxiliary";
-import { faCommentDots,faCommentSlash,faCommentAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCommentDots,
+  faCommentSlash,
+  faCommentAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "antd";
 import "./todo.css";
+
 function Todo(props) {
-  console.log(props, "newpropsss")
+  console.log(props, "newpropsss");
   const [isEdited, setIsEditing] = useState(false);
   const [newTask, setNewTask] = useState("");
-   const [tags, setTags] = useState(['']);
+  const [tags, setTags] = useState([""]);
   function changeTaskName(e) {
     setNewTask(e.target.value);
   }
@@ -23,15 +27,15 @@ function Todo(props) {
     month = "January";
   }
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [tagsName, setTagsName] = useState('')
+  const [tagsName, setTagsName] = useState("");
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   const handleSend = () => {
-     console.log("working")
-      setTagsName("")
-     setTags([...tags, tagsName])
+    console.log("working");
+    setTagsName("");
+    setTags([...tags, tagsName]);
     // setIsModalVisible(false);
   };
 
@@ -52,7 +56,7 @@ function Todo(props) {
           2021
         </p>
         <button className="comment-button" onClick={showModal}>
-          <FontAwesomeIcon icon={faCommentAlt}/>
+          <FontAwesomeIcon icon={faCommentAlt} />
         </button>
         <button className="edit" onClick={() => setIsEditing(true)}>
           Edit
@@ -67,35 +71,33 @@ function Todo(props) {
         </button>
       </div>
       <Modal
-          className="modal"
-          title="Comments"
-          visible={isModalVisible}
-          onOk={tagsName ?  handleSend : null}
-          onCancel={handleCancel}
-          okText="Send"
-          cancelButtonProps={{ style: { display: "none" } }}
-        >
-          <input
-            className="comments-input"
-            id="name"
-            value={tagsName}
-            onChange={(e) => setTagsName(e.target.value)}
-            placeholder="comment here ..."
-            type="text"
-          ></input>
+        className="modal"
+        title="Comments"
+        visible={isModalVisible}
+        onOk={tagsName ? handleSend : null}
+        onCancel={handleCancel}
+        okText="Send"
+        cancelButtonProps={{ style: { display: "none" } }}
+      >
+        <input
+          className="comments-input"
+          id="name"
+          value={tagsName}
+          onChange={(e) => setTagsName(e.target.value)}
+          placeholder="comment here ..."
+          type="text"
+        ></input>
 
-          <div>
-            {
-            tags.map((item, index) =>{
-              return (
-                <>
-                <p key={index}>{item}</p> <br/>
-                </>
-              )
-            })
-          }
-          </div>
-        </Modal>
+        <div>
+          {tags.map((item, index) => {
+            return (
+              <>
+                <p key={index}>{item}</p>
+              </>
+            );
+          })}
+        </div>
+      </Modal>
     </div>
   );
   const editing = (
@@ -132,11 +134,7 @@ function Todo(props) {
       </div>
     </div>
   );
-  return <Aux>
-    
-    {isEdited ? editing : justView}
-  
-  </Aux>;
+  return <Aux>{isEdited ? editing : justView}</Aux>;
 }
 
 export default Todo;

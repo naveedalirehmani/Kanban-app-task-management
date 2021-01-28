@@ -112,7 +112,7 @@ div {
     position: absolute;
     left: -2.3rem;
     top: 3.2rem;
-    z-index: 2;
+    /* z-index: ; */
   }
   .navbar .buttons button:hover span {
     visibility: visible;

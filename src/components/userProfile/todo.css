@@ -12,9 +12,9 @@
 .taskList .priorityButton{
   width: 4rem;
   padding: 0px;
-  border: 2px solid #3172bd25;
-  color: #3173bd;
-  background:  #3172bd25;
+  border: 2px solid #ffee0011;
+  color: #d4c710;
+  background:  #ffee0011;
   font-size: smaller;
   margin-left: 93%;
   border-radius: 10px;
@@ -27,8 +27,8 @@
 }
 .taskData p {
   font-size: 18px;
+  margin: 0px;
   margin-top: 5px;
-  margin-left: 0px;
   color: rgb(238, 238, 238);
 }
 .taskData input {
@@ -163,16 +163,6 @@
   color: black;
   transition: 0.3s;
 }
-/* .ant-btn {
-  border: 2px solid #38524c;
-  color: #42af7c;
-  background: #38524c;
-}
-.ant-btn:hover {
-  color: #42af7c;
-  background-color: #5a5e68;
-  border: 2px solid #5a5e68;
-} */
 div{
   /* border:1px solid red; */
 }
