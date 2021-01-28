@@ -12,7 +12,6 @@ function LogInForm(props) {
     age: null,
     email: "",
     password: "",
-    id: Math.random().toString(36).substring(7)
   });
   function handleSubmit() {
     if (user.name && user.email && user.age && user.password) {
@@ -27,7 +26,7 @@ function LogInForm(props) {
     }
   }
   function handleChange(e) {
-    setUser({ ...user, [e.target.id]: e.target.value });
+    setUser({ ...user, [e.target.id]: e.target.value,id: Math.random().toString(36).substring(7)});
   }
   return (
     <Aux>

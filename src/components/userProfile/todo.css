@@ -3,27 +3,30 @@
   width: 60rem;
   /* border-radius:4px; */
   margin: 0.5rem auto;
-  padding-left: 1rem;
+  padding: 0.5rem;
+  /* padding-left: 1rem; */
   transition:200ms;
-  border-bottom:1px solid #da673c;
+  border-bottom:1px solid grey;
 }
 .taskList:hover {
   background-color: #b4b4b409;
 }
 .taskList .priorityButton{
   width: 4rem;
-  border: 2px solid #bbbd310c;
-  color: #d6da02;
-  background: #bbbd310c;
+  border: 2px solid #3172bd25;
+  color: #3173bd;
+  background:  #3172bd25;
+  margin-left: 93%;
+  border-radius: 10px;
 }
 .taskData h2 {
   margin: 0px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #da673c;
 }
 .taskData p {
-  font-size: larger;
+  font-size: 18px;
   margin-top: 5px;
   margin-left: 0px;
   color: rgb(238, 238, 238);
@@ -72,6 +75,7 @@
   cursor: pointer;
   font-weight: 500;
   outline:none;
+  transition: 250ms;
 }
 .editButtons .edit {
   border: 2px solid #38524c;
