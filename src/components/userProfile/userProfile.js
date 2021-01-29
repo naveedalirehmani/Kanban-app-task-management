@@ -10,40 +10,38 @@ import Navbar from "./navbar";
 function User(props) {
   // SETTING USERPROFILEDATA IN LOCAL STORAGE -----------------------------------------------
   const [userProfileData, setUserProfileData] = useState([]);
-    console.log(userProfileData,"newstatesss")
-  const [view, setView] = useState('default')
-
   useEffect(() => {
     setUserProfileData(
       JSON.parse(localStorage.userProfileData || `[]`)
-    );
-  }, []);
-  function fUserProfileData(data) {
-    let arr = [...userProfileData, data];
-    setUserProfileData(arr)
-    localStorage.setItem("userProfileData", JSON.stringify(arr));
-  }
-  const specificUserData = userProfileData.filter((element) => {
-    return element.userId === localStorage.current_login_user
-  })
-  // DELETEING TASKS AND EDITING----------------------------------------------------------------
-  function deleteTask(para){
-    const updatedUserProfileData = userProfileData.filter((element)=>{
-      return (element.id != para)
+      );
+    }, []);
+    function fUserProfileData(data) {
+      let arr = [...userProfileData, data];
+      setUserProfileData(arr)
+      localStorage.setItem("userProfileData", JSON.stringify(arr));
+    }
+    const specificUserData = userProfileData.filter((element) => {
+      return element.userId === localStorage.current_login_user
     })
-    localStorage.setItem("userProfileData", JSON.stringify(updatedUserProfileData));
-    setUserProfileData(updatedUserProfileData)
-  }
-  function changeTaskName(id,newTask){
-    const index = userProfileData.findIndex(e => e.id === id)
-    let array = [...userProfileData]
-    array[index].task = newTask
-    setUserProfileData(array)
-    localStorage.setItem("userProfileData", JSON.stringify(array));
-  }
-
-  // SORTING OF ARRAYS ----------------------------------------------------------------
-
+    // DELETEING TASKS AND EDITING----------------------------------------------------------------
+    function deleteTask(para){
+      const updatedUserProfileData = userProfileData.filter((element)=>{
+        return (element.id != para)
+      })
+      localStorage.setItem("userProfileData", JSON.stringify(updatedUserProfileData));
+      setUserProfileData(updatedUserProfileData)
+    }
+    function changeTaskName(id,newTask){
+      const index = userProfileData.findIndex(e => e.id === id)
+      let newTasks = [...userProfileData]
+      newTasks[index].task = newTask
+      setUserProfileData(newTasks)
+      localStorage.setItem("userProfileData", JSON.stringify(newTasks));
+    }
+    
+    // SORTING OF ARRAYS ----------------------------------------------------------------
+    
+  const [view, setView] = useState('default')
   const high = specificUserData.filter(element => element.priority == "high")
   const medium = specificUserData.filter(element => element.priority == "medium")
   const low = specificUserData.filter(element => element.priority == "low")
@@ -60,14 +58,24 @@ function User(props) {
       id={element.id}
       priority={element.priority}
       name={element.taskName} 
-      task={element.task} 
+      task={element.task}
+      remindDate={element.remindDate}
       createdDate={element.createdDate}
       deleteTask={deleteTask}
       changeTaskName={changeTaskName} 
+      remindmeDate={remindMeDate}
       />);
   });
   // CONDITIONAL RENDERING OF THE CONTENT EDITING SCREENS ------------------------------------
   let [content, setContent] = useState(false);
+  // SETTING UP REMIND ME DATE ---------------------------------------------------------------
+  function remindMeDate(id,remindDate){
+    const index = userProfileData.findIndex(e => e.id === id)
+    let date = [...userProfileData]
+    date[index].remindDate = remindDate;
+    setUserProfileData(date)
+    localStorage.setItem("userProfileData", JSON.stringify(date));
+  }
   // RETURN -----------------------------------------------------------------------------------
   return (
     <section className="dashboard">

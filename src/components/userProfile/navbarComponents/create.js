@@ -11,7 +11,8 @@ function Create(props) {
         id: null,
         userId: localStorage.current_login_user,
         createdDate: createdDate,
-        tags:[]
+        tags:[],
+        remindDate:""
     });
 
     function handleSubmit(e) {

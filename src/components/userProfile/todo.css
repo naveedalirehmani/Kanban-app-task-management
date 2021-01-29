@@ -60,11 +60,26 @@
 }
 .editButtons {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .editButtons p {
   margin: 16px auto 0px 0px;
   font-size: 1rem;
   color: #3173bd;
+}
+.editButtons .selectDate{
+  background-color: #38524c;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #42af7c;
+  outline: none;
+  border: none;
+  width: 3rem;
+  height:1.8rem;
+  border-radius: 2px;
+  transition: 100ms;
+  margin-right: 0.3rem;
 }
 .editButtons button {
   margin: 5px;
@@ -74,11 +89,12 @@
   cursor: pointer;
   font-weight: 500;
   outline:none;
+  border-radius:4px;
   transition: 250ms;
 }
 .editButtons .edit {
   border: 2px solid #38524c;
-  color: #42af7c;
+  color: rgb(207, 207, 207);
   background: #38524c;
 }
 .editButtons .edit:hover {
@@ -96,7 +112,7 @@
 }
 .comment-button{
   border: 2px solid #38524c;
-  color: #42af7c;
+  color: rgb(207, 207, 207);
   background: #38524c;
 }
 .comment-button:hover {
@@ -104,10 +120,10 @@
   border: 2px solid #36393f;
 }
 .ant-modal-content {
-  background-color:#202225 !important;
+  background-color:#202225;
 }
 .ant-modal-header {
-  background-color:#202225 !important;
+  background-color:#202225;
 }
 .ant-modal-title{
   color: #da673c;

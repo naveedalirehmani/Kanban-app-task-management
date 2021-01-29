@@ -90,7 +90,7 @@ div {
     text-align: center;
     border: none;
     cursor: pointer;
-    color: #42af7c;
+    color: rgb(207, 207, 207);
     border-radius: 4px;
     background-color: #38524c;
     position: relative;
@@ -99,7 +99,7 @@ div {
   }
   .navbar .buttons button:hover {
     background-color:#36393f;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
   }
   .navbar .buttons span {
     visibility: hidden;

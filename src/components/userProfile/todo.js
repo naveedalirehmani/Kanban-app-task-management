@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Aux from "../../hoc/auxiliary";
-import {
-  faCommentDots,
-  faCommentSlash,
-  faCommentAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import {faCommentDots,faCommentSlash,faCommentAlt,} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "antd";
 import "./todo.css";
 
 function Todo(props) {
-  console.log(props, "newpropsss");
-  const [isEdited, setIsEditing] = useState(false);
+
+  // CHANGEING TASK -----------------------------------------------------------------------
   const [newTask, setNewTask] = useState("");
-  const [tags, setTags] = useState([""]);
   function changeTaskName(e) {
     setNewTask(e.target.value);
   }
@@ -21,28 +16,33 @@ function Todo(props) {
     props.changeTaskName(props.id, newTask);
     setIsEditing(false);
   }
-  const d = new Date(props.createdDate);
-  let [month, day, year] = [d.getMonth(), d.getDate(), d.getFullYear()];
-  if (month == 0) {
-    month = "January";
-  }
+  // CREATING A COMMENT --------------------------------------------------------------------
+  const [tags, setTags] = useState([""]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [tagsName, setTagsName] = useState("");
   const showModal = () => {
     setIsModalVisible(true);
   };
-
   const handleSend = () => {
-    console.log("working");
     setTagsName("");
     setTags([...tags, tagsName]);
-    // setIsModalVisible(false);
   };
-
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-
+  // CREATED DATE --------------------------------------------------------------------------
+  const d = new Date(props.createdDate);
+  let [month, day, year] = [d.getMonth(), d.getDate(), d.getFullYear()];
+  if (month == 0) {
+    month = "January";
+  }
+  // REMIND ME DATE ------------------------------------------------------------------------
+  const [remindDate, setRemindDate] = useState("");
+  useEffect(() => {
+    props.remindmeDate(props.id,remindDate)
+  }, [remindDate]);
+  // CONDITIONAL RENDERING ----------------------------------------------------------------
+  const [isEdited, setIsEditing] = useState(false);
   const justView = (
     <div className="taskList">
       <div className="taskData">
@@ -52,9 +52,9 @@ function Todo(props) {
       </div>
       <div className="editButtons">
         <p>
-          Created On : {day} {month} {year}------- Remind Me On : 1 september
-          2021
+          Created On : {day} {month} {year}------- Remind Me On :{props.remindDate}
         </p>
+        <input className="selectDate" id="datePicker" type="date" onChange={(e)=>{setRemindDate(e.target.value)}}/>
         <button className="comment-button" onClick={showModal}>
           <FontAwesomeIcon icon={faCommentAlt} />
         </button>

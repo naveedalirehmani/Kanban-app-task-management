@@ -47,19 +47,6 @@ function Home(props) {
     isLogInBack(false);
     isSignInBack(true);
   };
-  //  LOGIN RESULT CHECK AND ROUTE TO COMPONENT ------------------------------------------
-  function checkName(data) {
-    let result = userData.find((element) => {
-      return (element.email === data.email && element.password === data.password)
-    });
-    if(result){
-      localStorage.setItem("current_login_user", result.id);
-      props.sendUserObject(result)
-      history.push('/userprofile');
-    }else{
-      alert("incorrect credidentials")
-    }
-  }
   const logInDiv = <Loginform checkName={checkName}></Loginform>;
   const logInHome = (
     <Aux>
@@ -73,8 +60,21 @@ function Home(props) {
     <Signupform addUser={addUser} userData={userData}></Signupform>
   );
   const signUpHome = <img className="vector" src={vector} alt="" />;
+  //  LOGIN RESULT CHECK AND ROUTE TO COMPONENT ------------------------------------------
+  function checkName(data) {
+    let result = userData.find((element) => {
+      return (element.email === data.email && element.password === data.password)
+    });
+    if(result){
+      localStorage.setItem("current_login_user", result.id);
+      props.sendUserObject(result)
+      history.push('/userprofile');
+    }else{
+      alert("incorrect credidentials")
+    }
+  }
 
-  //RETURN------------------------------------------------------------------------------------------------------
+  //RETURN----------------------------------------------------------------------
   return (
     <section className="home">
       <div className="main">
