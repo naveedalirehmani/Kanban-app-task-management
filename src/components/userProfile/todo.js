@@ -48,7 +48,7 @@ function Todo(props) {
       </div>
       <div className="editButtons">
         <p>
-          Created On : {day} {month} {year}------- Remind Me On :{props.remindDate}
+          Created On : {day} {month} {year}------- Remind Me On : {props.remindDate}
         </p>
         <input className="selectDate" id="datePicker" type="date" onChange={(e)=>{ props.remindmeDate(props.id, e.target.value)}}/>
         <button className="comment-button" onClick={showModal}>

@@ -80,6 +80,7 @@
   border-radius: 2px;
   transition: 100ms;
   margin-right: 0.3rem;
+  /* cursor:pointer; */
 }
 .editButtons button {
   margin: 5px;

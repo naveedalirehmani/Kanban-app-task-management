@@ -3,8 +3,14 @@ import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import maleProfilePicture from "../../images/maleProfile2.jpg";
 import {faHome,faCamera,faFolder,faInbox,faBell,faPlus,faUser,faQuestionCircle,faSearch,faServer} from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 function navbar(props) {
+  const history = useHistory();
+  function LogOut(){
+    localStorage.setItem("current_login_user","");
+    history.push('/');
+  }
 
   return (
     <nav className="navbar">
@@ -32,9 +38,9 @@ function navbar(props) {
           <FontAwesomeIcon icon={faServer}></FontAwesomeIcon>
           <span>Sort-By</span>
         </button>
-        <button onClick={()=>{props.enable(5)}}>
+        <button onClick={LogOut}>
           <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-          <span>Profile</span>
+          <span>Log Out</span>
         </button>
       </div>
       <div className="profile">
