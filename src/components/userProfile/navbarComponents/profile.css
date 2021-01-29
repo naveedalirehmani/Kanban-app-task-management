@@ -1,0 +1,42 @@
+.userProfile {
+    width: 30vw;
+    height:78vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #202225;
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.788);
+    right:4%;
+    top:12%;
+  }
+  .dropUserProfile{
+    border:2px solid #202225;
+    width: 3rem;
+    height:3rem;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 12%;
+    top:-2%;
+    z-index: 2;
+    background-color:  #202225;
+  }
+  .closeButtonUserProfile{
+    border:2px solid #202225;
+    width: 1.5rem;
+    height:1.5rem;
+    position: absolute;
+    border-radius:10px;
+    left: 91%;
+    font-weight:bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    top:2%;
+    color:white;
+    z-index: 2;
+    background-color:#202225;
+    cursor: pointer;
+    padding-top:0rem;
+  }

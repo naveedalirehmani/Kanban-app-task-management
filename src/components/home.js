@@ -8,6 +8,7 @@ import Ouch2 from "../images/ouch2.png";
 import Ouch3 from "../images/ouch3.png";
 import Ouch6 from "../images/ouch6.png";
 import vector from "../images/vectorCreator2.jpg";
+// import Background from "../images/background.webp";
 import { useHistory } from "react-router-dom";
 
 function Home(props) {
@@ -46,19 +47,6 @@ function Home(props) {
     isLogInBack(false);
     isSignInBack(true);
   };
-  //  LOGIN RESULT CHECK AND ROUTE TO COMPONENT ------------------------------------------
-  function checkName(data) {
-    let result = userData.find((element) => {
-      return (element.email === data.email && element.password === data.password)
-    });
-    if(result){
-      localStorage.setItem("current_login_user", result.id);
-      props.sendUserObject(result)
-      history.push('/userprofile');
-    }else{
-      alert("incorrect credidentials")
-    }
-  }
   const logInDiv = <Loginform checkName={checkName}></Loginform>;
   const logInHome = (
     <Aux>
@@ -72,8 +60,21 @@ function Home(props) {
     <Signupform addUser={addUser} userData={userData}></Signupform>
   );
   const signUpHome = <img className="vector" src={vector} alt="" />;
+  //  LOGIN RESULT CHECK AND ROUTE TO COMPONENT ------------------------------------------
+  function checkName(data) {
+    let result = userData.find((element) => {
+      return (element.email === data.email && element.password === data.password)
+    });
+    if(result){
+      localStorage.setItem("current_login_user", result.id);
+      props.sendUserObject(result)
+      history.push('/userprofile');
+    }else{
+      alert("incorrect credidentials")
+    }
+  }
 
-  //RETURN------------------------------------------------------------------------------------------------------
+  //RETURN----------------------------------------------------------------------
   return (
     <section className="home">
       <div className="main">
