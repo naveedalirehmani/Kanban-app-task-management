@@ -6,9 +6,13 @@ import { Modal } from "antd";
 import "./todo.css";
 
 function Todo(props) {
-
+  const {userProfileData, id, setUserProfileData} = props
   // CHANGEING TASK -----------------------------------------------------------------------
   const [newTask, setNewTask] = useState("");
+  const [tags, setTags] = useState([""]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [tagsName, setTagsName] = useState("");
+
   function changeTaskName(e) {
     setNewTask(e.target.value);
   }
@@ -17,19 +21,39 @@ function Todo(props) {
     setIsEditing(false);
   }
   // CREATING A COMMENT --------------------------------------------------------------------
-  const [tags, setTags] = useState([""]);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [tagsName, setTagsName] = useState("");
   const showModal = () => {
     setIsModalVisible(true);
   };
   const handleSend = () => {
     setTagsName("");
     setTags([...tags, tagsName]);
+    const singleUserData = userProfileData.find(item => item.id === id)
+    const update = {...singleUserData, tags: tags}
+    localStorage.setItem("userProfileData", JSON.stringify([...userProfileData, update]));
   };
+
   const handleCancel = () => {
     setIsModalVisible(false);
+     setTags([])
+     setTagsName("")
   };
+  const handleEditComment =(index, item) =>{
+    setTagsName(item)
+  }
+  const handleUpdateComment =(index)=> {
+     const updateComment  = [...tags]
+        updateComment[index] = tagsName
+        setTags(updateComment)
+        setTagsName("")
+        const singleUserData = userProfileData.find(item => item.id === id)
+        const update = {...singleUserData, tags: updateComment}
+        localStorage.setItem("userProfileData", JSON.stringify([...userProfileData, update]));
+  }
+ const handleCommentDelete=(itemindex)=>{
+    const remove = tags.filter((item, index) => index !== itemindex)
+      setTags(remove)
+      setTagsName("")
+ }
   // CREATED DATE --------------------------------------------------------------------------
   const d = new Date(props.createdDate);
   let [month, day, year] = [d.getMonth(), d.getDate(), d.getFullYear()];
@@ -90,11 +114,17 @@ function Todo(props) {
 
         <div>
           {tags.map((item, index) => {
-            return (
-              <>
-                <p key={index}>{item}</p>
+            if(item){
+              return (
+                <>
+                <p key={index}>{item}
+                  <button style={{background: '#3e3e3e'}} onClick={()=> handleEditComment(index, item)}>Edit</button> 
+                  <button style={{background: '#3e3e3e'}} onClick={() => handleUpdateComment(index)}> Update</button>
+                  <button style={{background: '#3e3e3e'}} onClick={() => handleCommentDelete(index)}> Deleted</button>
+                </p>
               </>
             );
+          }
           })}
         </div>
       </Modal>

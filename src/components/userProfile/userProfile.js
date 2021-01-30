@@ -65,7 +65,12 @@ function User(props) {
       deleteTask={deleteTask}
       changeTaskName={changeTaskName} 
       remindmeDate={remindMeDate}
+
+      userProfileData={userProfileData}
+      setUserProfileData={setUserProfileData}
+
       changePriority={changePriority}
+
       />);
   });
   // CONDITIONAL RENDERING OF THE CONTENT EDITING SCREENS ------------------------------------
@@ -77,7 +82,6 @@ function User(props) {
     let date = [...userProfileData]
     date[index].remindDate = remindDate;
     setUserProfileData(date)
-     console.log(date,"sdasdasda")
     localStorage.setItem("userProfileData", JSON.stringify(date));
   }
   //CHANGING PRIORIOTY ------------------------------------------------------------------------
