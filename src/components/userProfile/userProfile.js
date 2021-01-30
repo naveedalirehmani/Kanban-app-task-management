@@ -85,13 +85,9 @@ function User(props) {
     const index = userProfileData.findIndex(e => e.id === id)
     let setPriority = [...userProfileData]
     let checkPriority = setPriority[index].priority
-    if (checkPriority == "high"){
-      setPriority[index].priority = "medium";
-    }else if (checkPriority == "medium"){
-      setPriority[index].priority = "low";
-    }else if (checkPriority == "low"){
-      setPriority[index].priority = "high";
-    }
+    if (checkPriority == "high"){setPriority[index].priority = "medium";}
+    else if (checkPriority == "medium"){setPriority[index].priority = "low";}
+    else if (checkPriority == "low"){setPriority[index].priority = "high";}
     setUserProfileData(setPriority)
     localStorage.setItem("userProfileData", JSON.stringify(setPriority));
   }

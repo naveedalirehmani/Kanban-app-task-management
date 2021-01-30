@@ -68,13 +68,13 @@
 .editButtons p {
   margin: 16px auto 0px 0px;
   font-size: 1rem;
-  color: #3173bd;
+  color:#5367a8;
 }
 .editButtons .selectDate{
-  background-color: #38524c;
+  background-color: #3172bd54;
   font-size: 1rem;
   font-weight: lighter;
-  color: rgb(207, 207, 207);
+  color: white;
   outline: none;
   border: none;
   width: 10rem;
@@ -96,9 +96,9 @@
   transition: 250ms;
 }
 .editButtons .edit {
-  border: 2px solid #38524c;
-  color: rgb(207, 207, 207);
-  background: #38524c;
+  border: 2px solid #3172bd11;
+  color: white;
+  background:#3172bd54;
 }
 .editButtons .edit:hover {
   background-color: #36393f;
@@ -114,9 +114,9 @@
   background: rgba(241, 16, 16, 0.096);
 }
 .comment-button{
-  border: 2px solid #38524c;
-  color: rgb(207, 207, 207);
-  background: #38524c;
+  border: 2px solid #3172bd11;
+  color: white;
+  background: #3172bd54;
 }
 .comment-button:hover {
   background-color: #36393f;
