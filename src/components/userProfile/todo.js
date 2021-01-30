@@ -60,13 +60,17 @@ function Todo(props) {
   if (month == 0) {
     month = "January";
   }
+  // CHANGING PRIORITY---------------------------------------------------------------------
+  function changePriority(){
+      props.changePriority(props.id)
+  }
 
   // CONDITIONAL RENDERING ----------------------------------------------------------------
   const [isEdited, setIsEditing] = useState(false);
   const justView = (
     <div className="taskList">
       <div className="taskData">
-        <button className="priorityButton">{props.priority}</button>
+        <button className="priorityButton" onClick={changePriority}>{props.priority}</button>
         <h2>{props.name}</h2>
         <p>{props.task}</p>
       </div>
@@ -129,7 +133,7 @@ function Todo(props) {
   const editing = (
     <div className="taskList">
       <div className="taskData">
-        <button className="priorityButton">{props.priority}</button>
+        <button className="priorityButton" onClick={changePriority}>{props.priority}</button>
         <h2>{props.name}</h2>
         <input
           onChange={changeTaskName}
@@ -148,14 +152,6 @@ function Todo(props) {
         </button>
         <button className="edit" onClick={submitNewTask}>
           Done
-        </button>
-        <button
-          className="delete"
-          onClick={() => {
-            props.deleteTask(props.id);
-          }}
-        >
-          Delete
         </button>
       </div>
     </div>

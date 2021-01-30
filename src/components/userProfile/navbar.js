@@ -2,7 +2,7 @@ import React from "react";
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import maleProfilePicture from "../../images/maleProfile2.jpg";
-import {faHome,faCamera,faFolder,faInbox,faBell,faPlus,faUser,faQuestionCircle,faSearch,faServer} from "@fortawesome/free-solid-svg-icons";
+import {faHome,faCamera,faFolder,faInbox,faBell,faPlus,faUser,faQuestionCircle,faSearch,faServer,faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 function navbar(props) {
@@ -31,15 +31,15 @@ function navbar(props) {
           <span>Create</span>
         </button>
         <button onClick={()=>{props.enable(3)}}>
-          <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
-          <span>Home</span>
+          <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+          <span>Profile</span>
         </button>
         <button onClick={()=>{props.enable(4)}}>
           <FontAwesomeIcon icon={faServer}></FontAwesomeIcon>
           <span>Sort-By</span>
         </button>
         <button onClick={LogOut}>
-          <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
           <span>Log Out</span>
         </button>
       </div>
