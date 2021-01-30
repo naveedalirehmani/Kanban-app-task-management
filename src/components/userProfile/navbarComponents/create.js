@@ -16,6 +16,7 @@ function Create(props) {
     });
 
     function handleSubmit(e) {
+        props.enable(0)
         e.preventDefault()
         props.setUserProfiledata({...data,id:Math.floor(Math.random()*100000)} )
     }
@@ -38,7 +39,6 @@ function Create(props) {
                 />
                 <div className="taskButtons">
                     <button className="add" onClick={handleSubmit}>Add</button>
-                    <button className="setDate">Set Date</button>
                     <p>Set Priority</p>
                 <select id="priority" onChange={inputValue}>
                     <option value="high">High</option>

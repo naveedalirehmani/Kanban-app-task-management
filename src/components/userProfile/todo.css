@@ -18,6 +18,8 @@
   font-size: smaller;
   margin-left: 93%;
   border-radius: 10px;
+  cursor:pointer;
+  outline:none;
 }
 .taskData h2 {
   margin: 0px;
@@ -72,10 +74,10 @@
   background-color: #38524c;
   font-size: 1rem;
   font-weight: lighter;
-  color: #42af7c;
+  color: rgb(207, 207, 207);
   outline: none;
   border: none;
-  width: 3rem;
+  width: 10rem;
   height:1.8rem;
   border-radius: 2px;
   transition: 100ms;

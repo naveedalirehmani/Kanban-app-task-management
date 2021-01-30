@@ -10,7 +10,6 @@ import Navbar from "./navbar";
 function User(props) {
   // SETTING USERPROFILEDATA IN LOCAL STORAGE -----------------------------------------------
   const [userProfileData, setUserProfileData] = useState([]);
-  console.log(userProfileData, "profiledata")
   useEffect(() => {
     setUserProfileData(
       JSON.parse(localStorage.userProfileData || `[]`)
@@ -66,6 +65,7 @@ function User(props) {
       deleteTask={deleteTask}
       changeTaskName={changeTaskName} 
       remindmeDate={remindMeDate}
+      changePriority={changePriority}
       />);
   });
   // CONDITIONAL RENDERING OF THE CONTENT EDITING SCREENS ------------------------------------
@@ -79,6 +79,21 @@ function User(props) {
     setUserProfileData(date)
      console.log(date,"sdasdasda")
     localStorage.setItem("userProfileData", JSON.stringify(date));
+  }
+  //CHANGING PRIORIOTY ------------------------------------------------------------------------
+  function changePriority(id,priority){
+    const index = userProfileData.findIndex(e => e.id === id)
+    let setPriority = [...userProfileData]
+    let checkPriority = setPriority[index].priority
+    if (checkPriority == "high"){
+      setPriority[index].priority = "medium";
+    }else if (checkPriority == "medium"){
+      setPriority[index].priority = "low";
+    }else if (checkPriority == "low"){
+      setPriority[index].priority = "high";
+    }
+    setUserProfileData(setPriority)
+    localStorage.setItem("userProfileData", JSON.stringify(setPriority));
   }
   // RETURN -----------------------------------------------------------------------------------
   return (
