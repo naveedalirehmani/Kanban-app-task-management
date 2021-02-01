@@ -88,9 +88,9 @@ div {
     height: 2.5rem;
     font-size: 0.9rem;
     text-align: center;
-    border: none;
+    border:2px solid #3172bd54;
     cursor: pointer;
-    color: rgb(207, 207, 207);
+    color: white;
     border-radius: 4px;
     background-color: #3172bd54;
     position: relative;
@@ -98,7 +98,7 @@ div {
     transition: 250ms;
   }
   .navbar .buttons button:hover {
-    background-color:#36393f;
+    background:none;
     /* transform: scale(1.1); */
   }
   .navbar .buttons span {
@@ -133,7 +133,7 @@ div {
     border-radius: 50%;
     box-shadow: none;
   }
-  .profile p {
+  .profile p{
     color: white;
     font-size: 1rem;
   }

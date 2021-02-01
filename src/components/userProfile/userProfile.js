@@ -8,14 +8,15 @@ import Todo from "./todo"
 import Navbar from "./navbar";
 
 function User(props) {
+  
   // SETTING USERPROFILEDATA IN LOCAL STORAGE -----------------------------------------------
+
   const [userProfileData, setUserProfileData] = useState([]);
   useEffect(() => {
     setUserProfileData(
       JSON.parse(localStorage.userProfileData || `[]`)
       );
     }, []);
-
     function fUserProfileData(data) {
       let arr = [...userProfileData, data];
       setUserProfileData(arr)
@@ -24,10 +25,12 @@ function User(props) {
     const specificUserData = userProfileData.filter((element) => {
       return element.userId === localStorage.current_login_user
     })
-    // DELETEING TASKS AND EDITING----------------------------------------------------------------
-    function deleteTask(para){
+
+  // DELETEING TASKS AND EDITING----------------------------------------------------------------
+
+    function deleteTask(data){
       const updatedUserProfileData = userProfileData.filter((element)=>{
-        return (element.id != para)
+        return (element.id != data)
       })
       localStorage.setItem("userProfileData", JSON.stringify(updatedUserProfileData));
       setUserProfileData(updatedUserProfileData)
@@ -40,7 +43,7 @@ function User(props) {
       localStorage.setItem("userProfileData", JSON.stringify(newTasks));
     }
     
-    // SORTING OF ARRAYS ----------------------------------------------------------------
+  // SORTING OF ARRAYS ----------------------------------------------------------------
     
   const [view, setView] = useState('default')
   const high = specificUserData.filter(element => element.priority == "high")
@@ -53,7 +56,9 @@ function User(props) {
   else if (view == "high_priority") {list = highmediumlow} 
   else if (view == "low_priority") {list = lowmediumhigh
   }
+
   // RENDERING USER TODO LIST ----------------------------------------------------------------
+
   const taskList = list.map((element) => {
     return (<Todo
       id={element.id}
@@ -65,17 +70,18 @@ function User(props) {
       deleteTask={deleteTask}
       changeTaskName={changeTaskName} 
       remindmeDate={remindMeDate}
-
       userProfileData={userProfileData}
       setUserProfileData={setUserProfileData}
-
       changePriority={changePriority}
-
       />);
   });
+
   // CONDITIONAL RENDERING OF THE CONTENT EDITING SCREENS ------------------------------------
+
   let [content, setContent] = useState(false);
+
   // SETTING UP REMIND ME DATE ---------------------------------------------------------------
+
   function remindMeDate(id,remindDate){
     console.log(remindDate, "remindDate")
     const index = userProfileData.findIndex(e => e.id === id)
@@ -84,8 +90,10 @@ function User(props) {
     setUserProfileData(date)
     localStorage.setItem("userProfileData", JSON.stringify(date));
   }
+
   //CHANGING PRIORIOTY ------------------------------------------------------------------------
-  function changePriority(id,priority){
+
+  function changePriority(id){
     const index = userProfileData.findIndex(e => e.id === id)
     let setPriority = [...userProfileData]
     let checkPriority = setPriority[index].priority
@@ -95,10 +103,20 @@ function User(props) {
     setUserProfileData(setPriority)
     localStorage.setItem("userProfileData", JSON.stringify(setPriority));
   }
+  // SEARCHING THROUGH THE ARRAY -------------------------------------------------------------
+  function sendSearchData(data){
+    // let lowerCaseData = data.toLowerCase(data)
+    // console.log(data)
+    const searchArray = specificUserData.filter((element)=>{
+      return element.taskName.includes(data)
+    })
+    console.log(searchArray)
+  }
   // RETURN -----------------------------------------------------------------------------------
+
   return (
     <section className="dashboard">
-      <Navbar enable={element => setContent(element)} userObject={props.userObject}></Navbar>
+      <Navbar sendSearchData={sendSearchData}enable={element => setContent(element)} userObject={props.userObject}></Navbar>
       <div className="content">
         {(content == 1) ? <Notification></Notification> : null}
         {(content == 2) ? <Create setUserProfiledata={fUserProfileData} enable={element => setContent(element)}></Create> : null}

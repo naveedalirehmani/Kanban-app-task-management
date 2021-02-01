@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import maleProfilePicture from "../../images/maleProfile2.jpg";
@@ -6,17 +6,25 @@ import {faHome,faCamera,faFolder,faInbox,faBell,faPlus,faUser,faQuestionCircle,f
 import { useHistory } from "react-router-dom";
 
 function navbar(props) {
+  // LOGGING OUT USER ---------------------------------------------------------------------
   const history = useHistory();
   function LogOut(){
     localStorage.setItem("current_login_user","");
     history.push('/');
   }
-
+  // SEARCHING THROUGH THE DATA ------------------------------------------------------------
+  const [searchData,setSearchData]=useState('');
+  function search(e){
+    setSearchData(e.target.value)
+  };
+  useEffect(() => {
+    props.sendSearchData(searchData)
+  }, [searchData])
   return (
     <nav className="navbar">
       <div className="Title">TodoMatic</div>
       <div className="search">
-        <input id="search-bar" type="text" placeholder="Search"></input>
+        <input onChange={search} id="search-bar"  type="text"  placeholder="Search"></input>
         <div className="search-icon">
           <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
         </div>

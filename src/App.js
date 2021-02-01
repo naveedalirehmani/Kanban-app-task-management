@@ -4,9 +4,6 @@ import User from './components/userProfile/userProfile'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { Button } from 'antd';
 
-
-
-
 function App() {
   const[userObject,setuserObject]=useState('');
   let sendUserObject =(result)=>{

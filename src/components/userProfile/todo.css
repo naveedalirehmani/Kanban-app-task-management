@@ -96,31 +96,28 @@
   transition: 250ms;
 }
 .editButtons .edit {
-  border: 2px solid #3172bd11;
+  border: 2px solid #3172bd54;
   color: white;
   background:#3172bd54;
 }
 .editButtons .edit:hover {
   background-color: #36393f;
-  border: 2px solid #36393f;
 }
 .editButtons .delete {
-  border: 2px solid rgba(241, 237, 16, 0);
+  border: 2px solid rgba(241, 16, 16, 0.226);
   color: rgba(255, 0, 0, 0.856);
   background: rgba(241, 16, 16, 0.226);
 }
 .editButtons .delete:hover {
-  border: 2px solid rgba(241, 16, 16, 0);
   background: rgba(241, 16, 16, 0.096);
 }
 .comment-button{
-  border: 2px solid #3172bd11;
+  border: 2px solid #3172bd54;
   color: white;
   background: #3172bd54;
 }
 .comment-button:hover {
   background-color: #36393f;
-  border: 2px solid #36393f;
 }
 .ant-modal-content {
   background-color:#202225;
@@ -145,11 +142,20 @@
 .ant-modal-body {
   padding: 1rem;
 }
-.ant-modal-body p{
+.ant-modal-body span{
   font-size: 18px;
   margin: 0px;
   padding:0px;
   color: rgb(238, 238, 238);
+}
+.ant-modal-body .commentButtons {
+  border: 2px solid #5367a8;
+  color: white;
+  background-color:#5367a8;
+}
+.ant-modal-body .commentButtons:hover {
+  background-color: #36393f;
+  border: 2px solid #36393f;
 }
 .comments-input {
   padding: 0.5rem;
