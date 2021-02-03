@@ -29,7 +29,7 @@ function Create(props) {
         <div className="create">
             <form className="createForm" action="">
                 <p>Add A Task</p>
-                <input id="taskName" onChange={inputValue} type="text" className="name" placeholder="Add Task Name Here" />
+                <input id="taskName" onChange={inputValue} type="text" className="name" placeholder="Add Task title Here" />
                 <input
                     id="task"
                     onChange={inputValue}

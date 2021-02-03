@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import Home from './components/home'
 import User from './components/userProfile/userProfile'
+import Profile from "./components/userProfile/navbarComponents/profile";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { Button } from 'antd';
 
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <Route path="/" exact component={Home}><Home sendUserObject={sendUserObject}></Home></Route>
       <Route path="/userprofile" exact component={User}><User userObject={userObject}></User></Route>
+      <Route path='/profile' exact component={Profile}><Profile userObject={userObject} ></Profile></Route>
     </Router>
   );
 }

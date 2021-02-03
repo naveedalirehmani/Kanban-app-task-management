@@ -3,7 +3,7 @@ import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import maleProfilePicture from "../../images/maleProfile2.jpg";
 import {faHome,faCamera,faFolder,faInbox,faBell,faPlus,faUser,faQuestionCircle,faSearch,faServer,faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 function navbar(props) {
   // LOGGING OUT USER ---------------------------------------------------------------------
@@ -20,11 +20,15 @@ function navbar(props) {
   useEffect(() => {
     props.sendSearchData(searchData)
   }, [searchData])
+  // ROUTE TO PROFILE ----------------------------------------------------------------------
+  function routeToProfile(){
+    history.push('/profile')
+  }
   return (
     <nav className="navbar">
       <div className="Title">TodoMatic</div>
       <div className="search">
-        <input onChange={search} id="search-bar"  type="text"  placeholder="Search"></input>
+        <input onChange={search} id="search-bar"  type="text"  placeholder="Search by title"></input>
         <div className="search-icon">
           <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
         </div>
@@ -38,7 +42,7 @@ function navbar(props) {
           <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
           <span>Create</span>
         </button>
-        <button onClick={()=>{props.enable(3)}}>
+        <button onClick={routeToProfile}>
           <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
           <span>Profile</span>
         </button>

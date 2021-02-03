@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./userProfiles.css";
 import Create from "./navbarComponents/create";
 import SortBy from "./navbarComponents/sortBy";
-import Profile from "./navbarComponents/profile";
 import Notification from './notifications'
 import Todo from "./todo"
 import Navbar from "./navbar";
@@ -43,7 +42,7 @@ function User(props) {
       localStorage.setItem("userProfileData", JSON.stringify(newTasks));
     }
     
-  // SORTING OF ARRAYS ----------------------------------------------------------------
+  // SORTING OF ARRAYS -----------------------------------------------------------------------
     
   const [view, setView] = useState('default')
   const high = specificUserData.filter(element => element.priority == "high")
@@ -58,23 +57,44 @@ function User(props) {
   }
 
   // RENDERING USER TODO LIST ----------------------------------------------------------------
+  const [filteredArray,setFilteredArray]=useState("")
+  let taskList= "";
+  if(filteredArray.length > 0){
+     taskList = filteredArray.map((element) => {
+      return (<Todo
+        id={element.id}
+        priority={element.priority}
+        name={element.taskName} 
+        task={element.task}
+        remindDate={element.remindDate}
+        createdDate={element.createdDate}
+        deleteTask={deleteTask}
+        changeTaskName={changeTaskName} 
+        remindmeDate={remindMeDate}
+        userProfileData={userProfileData}
+        setUserProfileData={setUserProfileData}
+        changePriority={changePriority}
+        />);
+    });
+  }else {
+    taskList = list.map((element) => {
+      return (<Todo
+        id={element.id}
+        priority={element.priority}
+        name={element.taskName} 
+        task={element.task}
+        remindDate={element.remindDate}
+        createdDate={element.createdDate}
+        deleteTask={deleteTask}
+        changeTaskName={changeTaskName} 
+        remindmeDate={remindMeDate}
+        userProfileData={userProfileData}
+        setUserProfileData={setUserProfileData}
+        changePriority={changePriority}
+        />);
+    });
+  }
 
-  const taskList = list.map((element) => {
-    return (<Todo
-      id={element.id}
-      priority={element.priority}
-      name={element.taskName} 
-      task={element.task}
-      remindDate={element.remindDate}
-      createdDate={element.createdDate}
-      deleteTask={deleteTask}
-      changeTaskName={changeTaskName} 
-      remindmeDate={remindMeDate}
-      userProfileData={userProfileData}
-      setUserProfileData={setUserProfileData}
-      changePriority={changePriority}
-      />);
-  });
 
   // CONDITIONAL RENDERING OF THE CONTENT EDITING SCREENS ------------------------------------
 
@@ -104,14 +124,14 @@ function User(props) {
     localStorage.setItem("userProfileData", JSON.stringify(setPriority));
   }
   // SEARCHING THROUGH THE ARRAY -------------------------------------------------------------
+  
   function sendSearchData(data){
-    // let lowerCaseData = data.toLowerCase(data)
-    // console.log(data)
     const searchArray = specificUserData.filter((element)=>{
       return element.taskName.includes(data)
     })
-    console.log(searchArray)
+    setFilteredArray(searchArray)
   }
+
   // RETURN -----------------------------------------------------------------------------------
 
   return (
@@ -121,7 +141,6 @@ function User(props) {
         {(content == 1) ? <Notification></Notification> : null}
         {(content == 2) ? <Create setUserProfiledata={fUserProfileData} enable={element => setContent(element)}></Create> : null}
         {(content == 4) ? <SortBy enable={element => setContent(element)} sort={element => setView(element)}></SortBy> : null}
-        {(content == 5) ? <Profile enable={element => setContent(element)}></Profile> : null}
         {taskList}
       </div>
     </section>
